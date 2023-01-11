@@ -4,10 +4,10 @@
 </div>
 <!-- /.content-wrapper -->
 <footer class="main-footer">
-    <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong>
+    <strong>Copyright &copy; 2023</strong>
     All rights reserved.
     <div class="float-right d-none d-sm-inline-block">
-        <b>Version</b> 3.0.5
+        <b>Version</b> 2.3
     </div>
 </footer>
 
@@ -53,7 +53,7 @@
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src=" {{ asset('AdminPanel/dist/js/pages/dashboard.js') }}"></script>
 <!-- AdminLTE for demo purposes -->
-<script src=" {{ asset('AdminPanel/dist/js/demo.js') }}"></script>
+{{-- <script src=" {{ asset('AdminPanel/dist/js/demo.js') }}"></script> --}}
 </body>
 
 </html>

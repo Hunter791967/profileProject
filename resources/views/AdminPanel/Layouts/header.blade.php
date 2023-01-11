@@ -19,7 +19,7 @@
     <!-- JQVMap -->
     <link rel="stylesheet" href="{{ asset('AdminPanel/plugins/jqvmap/jqvmap.min.css') }}">
     <!-- Theme style -->
-    <link rel="stylesheet" href="{{ asset('AdminPanel/dist/css/adminlte.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('AdminPanel/dist/css/adminlte.css') }}">
     <!-- overlayScrollbars -->
     <link rel="stylesheet" href="{{ asset('AdminPanel/plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
     <!-- Daterange picker -->
@@ -28,6 +28,12 @@
     <link rel="stylesheet" href="{{ asset('AdminPanel/plugins/summernote/summernote-bs4.css') }}">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <!-- Custom Style For Arabic -->
+    @if (App::getLocale() == 'ar')
+        <link rel="stylesheet" href="{{ asset('AdminPanel/dist/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('AdminPanel/dist/css/custom_rtl.css') }}">
+    @endif
+
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
