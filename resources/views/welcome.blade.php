@@ -32,8 +32,18 @@
             @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                     @auth
-                        <a href="{{ url('/dashboard') }}"
-                            class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
+
+                        @if (!Auth::user()->hasRole('user'))
+                            <a class="headers_link" href="{{ url('/dashboard') }}"
+                                class="text-sm text-gray-700 dark:text-gray-500 underline">{{ __('app.Dashboard') }}</a>
+                        @endif
+                        <form action="{{ route('logout') }}" method="post">
+                            @csrf
+                            <button class="logout_btn">{{ __('app.LOG OUT') }}</button>
+                        </form>
+
+                        {{-- <a class="headers_link" href="{{ url('/dashboard') }}"
+                                class="text-sm text-gray-700 dark:text-gray-500 underline">{{ __('app.Dashboard') }}</a> --}}
                     @else
                         <a class="headers_link headers_left" href="{{ route('login') }}"
                             class="text-sm text-gray-700 dark:text-gray-500 underline">Log In</a>

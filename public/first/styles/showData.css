@@ -1,0 +1,25 @@
+
+.add_btn {
+    width: 10%;
+    border-color: none !important;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+.add_btn:hover {
+    background-color: #c2c7d0 !important;
+    border-color: #c2c7d0 !important;
+    color: #000;
+}
+
+.formButton {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+}
+.formButton:hover {
+    color: #000;
+}

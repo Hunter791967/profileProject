@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="{{ asset('AdminPanel/plugins/fontawesome-free/css/all.min.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Tempusdominus Bbootstrap 4 -->
@@ -33,12 +34,12 @@
         <link rel="stylesheet" href="{{ asset('AdminPanel/dist/css/bootstrap.min.css') }}">
         <link rel="stylesheet" href="{{ asset('AdminPanel/dist/css/custom_rtl.css') }}">
     @endif
-
+    @yield('page_style')
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
-
+        @include('sweetalert::alert')
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
             <!-- Left navbar links -->
@@ -48,7 +49,7 @@
                             class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="index3.html" class="nav-link">{{ __('app.Home') }}</a>
+                    <a href="{{ route('dashboard') }}" class="nav-link">{{ __('app.Home') }}</a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
                     <a href="#" class="nav-link">{{ __('app.contact') }}</a>
@@ -82,9 +83,9 @@
                                 href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}"
                                 class="dropdown-item {{ App::getLocale() == $localeCode ? 'active' : '' }}">
                                 <!-- Message Start -->
-                                <div class="media">
+                                <div class="media media_lang">
                                     <img src="{{ asset('AdminPanel/dist/img/' . $properties['name'] . '.jpg') }}"
-                                        alt="User Avatar" class="img-size-50 mr-3 img-circle">
+                                        alt="User Avatar" class="img-size-50 mr-3 img-circle lang_circle">
                                     <div class="media-body">
                                         <h3 class="dropdown-item-title">
                                             {{ $properties['native'] }}
@@ -101,37 +102,21 @@
                 <!-- Notifications Dropdown Menu -->
                 <li class="nav-item dropdown">
                     <a class="nav-link" data-toggle="dropdown" href="#">
-                        <i class="far fa-bell"></i>
-                        <span class="badge badge-warning navbar-badge">15</span>
+                        <img src="{{ asset('AdminPanel/dist/img/log_out.png') }}" alt="LOG OUT" width="30px">
                     </a>
                     <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                        <span class="dropdown-item dropdown-header">15 Notifications</span>
-                        <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item">
-                            <i class="fas fa-envelope mr-2"></i> 4 new messages
-                            <span class="float-right text-muted text-sm">3 mins</span>
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item">
-                            <i class="fas fa-users mr-2"></i> 8 friend requests
-                            <span class="float-right text-muted text-sm">12 hours</span>
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item">
-                            <i class="fas fa-file mr-2"></i> 3 new reports
-                            <span class="float-right text-muted text-sm">2 days</span>
-                        </a>
+
                         <div class="dropdown-divider"></div>
                         <form action="{{ route('logout') }}" method="post">
                             @csrf
-                            <button class="dropdown-item dropdown-footer">LOG OUT</button>
+                            <button
+                                class="dropdown-item dropdown-footer dropdown_logout">{{ __('app.LOG OUT') }}</button>
                         </form>
 
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#"
-                        role="button">
+                    <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
                         <i class="fas fa-th-large"></i>
                     </a>
                 </li>
@@ -158,7 +143,8 @@
                     </div>
                     <div class="info">
                         <a href="#" class="d-block">@lang('app.Welcome'), {{ Auth::user()->name }}</a>
-                        <small class="show_email">{{ Auth::user()->email }}</small>
+                        <small class="show_email"
+                            style="color:#c2c7d0; font-size: 10px;">{{ Auth::user()->email }}</small>
                     </div>
                 </div>
 
@@ -166,25 +152,51 @@
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                         data-accordion="false">
-                        <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
+
                         <li class="nav-item has-treeview menu-open">
-                            <a href="#" class="nav-link active">
+                            <a href="{{ route('dashboard') }}"
+                                class="nav-link {{ Request::segment(2) == 'dashboard' ? 'active' : '' }}">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     @lang('app.Dashboard')
-                                    <i class="right fas fa-angle-left"></i>
+
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="pages/widgets.html" class="nav-link">
-                                <i class="nav-icon fas fa-th"></i>
-                                <p>
-                                    Widgets
-                                    <span class="right badge badge-danger">New</span>
+                        <li class="nav-item has-treeview">
+                            <a href="{{ route('user.index') }}"
+                                class="nav-link {{ Request::segment(2) == 'user' ? 'active' : '' }}">
+                                <i class="fa-solid fa-users"></i>
+                                <p class="crud">
+                                    USERS
+                                    <i class="fas fa-angle-left right"></i>
+
                                 </p>
                             </a>
+                            <ul class="nav nav-treeview">
+                                {{-- @dump(Request::segment(3)) --}}
+                                <li class="nav-item">
+                                    <a href="{{ route('user.index') }}"
+                                        class="nav-link {{ Request::segment(3) == 'user' ? 'active' : '' }}">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>SHOW </p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    @if (Auth::user()->hasPermission('users-create'))
+                                        <a href="{{ url('/user/create') }}"
+                                            class="nav-link {{ Request::segment(3) == 'create' ? 'active' : '' }}">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>ADD </p>
+                                        </a>
+                                        {{-- @else
+                                        <button disabled class="nav-link" type="button">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>ADD </p>
+                                        </button> --}}
+                                    @endif
+                                </li>
+                            </ul>
                         </li>
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
@@ -254,12 +266,13 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0 text-dark">@lang('app.Dashboard')</h1>
+                            <h1 class="m-0 text-dark">@yield('page_title')</h1>
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="#">{{ __('app.Home') }}</a></li>
-                                <li class="breadcrumb-item active">@lang('app.Dashboard')</li>
+                                <li class="breadcrumb-item"><a
+                                        href="{{ route('dashboard') }}">{{ __('app.Home') }}</a></li>
+                                <li class="breadcrumb-item active">@yield('page_title')</li>
                             </ol>
                         </div><!-- /.col -->
                     </div><!-- /.row -->

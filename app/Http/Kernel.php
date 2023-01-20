@@ -63,6 +63,8 @@ class Kernel extends HttpKernel
         'signed' => \App\Http\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+        /*** This Middleware Acting as a second layer of Authentication to Prevent Non Authorized Users from Accessing Dashboard "Admin Panel */
+        'AccessDash' => \App\Http\Middleware\AccessDashboard::class,
         /**** MCAMARA MIDDLEWARE ****/
         'localize'                => \Mcamara\LaravelLocalization\Middleware\LaravelLocalizationRoutes::class,
         'localizationRedirect'    => \Mcamara\LaravelLocalization\Middleware\LaravelLocalizationRedirectFilter::class,

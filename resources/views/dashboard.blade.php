@@ -17,7 +17,9 @@
 </x-app-layout> --}}
 
 @extends('AdminPanel.Layouts.app')
-
+@section('page_title')
+    @lang('app.AdminPanel')
+@endsection
 @section('content')
     <!-- Small boxes (Stat box) -->
     <div class="row">

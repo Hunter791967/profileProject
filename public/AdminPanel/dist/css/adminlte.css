@@ -559,7 +559,16 @@ pre code {
   margin-right: auto;
   margin-left: auto;
 }
-
+.lang_circle {
+    width: 40px !important;
+    height: 40px !important;
+}
+.media_lang {
+    align-items: center !important;
+}
+.crud {
+    padding-left: 10px;
+}
 @media (min-width: 576px) {
   .container {
     max-width: 540px;

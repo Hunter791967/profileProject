@@ -60,11 +60,11 @@
         padding: 0 0 0 45px;
         background: rgba(255, 255, 255, 0.1);
         outline: none;
-        -webkit-border-radius: ;
-        -moz-border-radius: ;
-        -ms-border-radius: ;
-        -o-border-radius: ;
-    }
+        -webkit-border-radius: 30px;
+        -moz-border-radius: 30px;
+        -ms-border-radius: 30px;
+        -o-border-radius: 30px;
+}
 
     i {
         position: relative;
@@ -140,4 +140,20 @@
         color: #f1ea41;
         list-style-type: none;
         font-size: 15px;
+    }
+/***Forgot Password Form *******************************************************************************************/
+
+    .forgot_form {
+        margin-top: 100px;
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        /* border: 2px solid #f1ea41; */
+        padding: 0 15px 0 15px;
+    }
+    .forgot_text {
+        color: #f1ea41;
+        font-size: 15px;
+        line-height: 1.5em;
     }

@@ -18,7 +18,7 @@ return [
         ],
 
         'user' => [
-            'profile' => 'r,u',
+            'profile' => '',
         ]
     ],
 

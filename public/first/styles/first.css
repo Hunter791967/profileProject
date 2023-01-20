@@ -75,3 +75,12 @@ body {
   .ecf_title small {
     font-size: .5em;
   }
+
+  .logout_btn {
+    background-color: transparent !important;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 600;
+  }
