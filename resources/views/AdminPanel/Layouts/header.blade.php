@@ -59,7 +59,7 @@
             <!-- SEARCH FORM -->
             <form class="form-inline ml-3">
                 <div class="input-group input-group-sm">
-                    <input class="form-control form-control-navbar" type="search" placeholder="Search"
+                    <input class="form-control form-control-navbar" type="search" placeholder="@lang('app.Search')"
                         aria-label="Search">
                     <div class="input-group-append">
                         <button class="btn btn-navbar" type="submit">
@@ -168,7 +168,7 @@
                                 class="nav-link {{ Request::segment(2) == 'user' ? 'active' : '' }}">
                                 <i class="fa-solid fa-users"></i>
                                 <p class="crud">
-                                    USERS
+                                    @lang('app.USERS')
                                     <i class="fas fa-angle-left right"></i>
 
                                 </p>

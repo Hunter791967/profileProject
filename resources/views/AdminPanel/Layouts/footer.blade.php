@@ -4,10 +4,10 @@
 </div>
 <!-- /.content-wrapper -->
 <footer class="main-footer">
-    <strong>Copyright &copy; 2023</strong>
-    All rights reserved.
+    <strong>@lang('app.Copyrights') &copy; 2023</strong>
+    @lang('app.Rights').
     <div class="float-right d-none d-sm-inline-block">
-        <b>Version</b> 2.3
+        <b>@lang('app.Version')</b> 2.3
     </div>
 </footer>
 

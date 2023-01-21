@@ -7,13 +7,12 @@
 @section('content')
     <div class="card">
         <div class="card-header">
-            <h4>SHOWING ALL @lang('app.USERS')</h4>
+            <h4>@lang('app.SHOWING ALL') @lang('app.USERS')</h4>
             @if (Auth::user()->hasPermission('users-create'))
                 <button type="button" class="btn btn-block btn-primary add_btn"><a class="formButton"
-                        href="{{ url('/user/create') }}">ADD
-                        USER</a></button>
+                        href="{{ url('/user/create') }}">@lang('app.ADD USER')</a></button>
             @else
-                <button disabled type="button" class="btn btn-block btn-primary add_btn">ADD USER</button>
+                <button disabled type="button" class="btn btn-block btn-primary add_btn">@lang('app.ADD USER')</button>
             @endif
         </div>
         <!-- /.card-header -->
@@ -28,26 +27,30 @@
                                 <tr role="row">
                                     <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1"
                                         colspan="1" aria-sort="ascending"
-                                        aria-label="Rendering engine: activate to sort column descending">ID
+                                        aria-label="Rendering engine: activate to sort column descending">@lang('app.ID')
                                     </th>
                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
-                                        colspan="1" aria-label="Browser: activate to sort column ascending">USER_NAME
+                                        colspan="1" aria-label="Browser: activate to sort column ascending">
+                                        @lang('app.USER_NAME')
                                     </th>
                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
                                         colspan="1" aria-label="Platform(s): activate to sort column ascending">
-                                        EMAIL</th>
+                                        @lang('app.EMAIL')</th>
                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
-                                        colspan="1" aria-label="Engine version: activate to sort column ascending">ROLES
+                                        colspan="1" aria-label="Engine version: activate to sort column ascending">
+                                        @lang('app.ROLES')
                                     </th>
                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
-                                        colspan="1" aria-label="CSS grade: activate to sort column ascending">PERMISSIONS
+                                        colspan="1" aria-label="CSS grade: activate to sort column ascending">
+                                        @lang('app.PERMISSIONS')
                                     </th>
                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
-                                        colspan="1" aria-label="CSS grade: activate to sort column ascending">Options
+                                        colspan="1" aria-label="CSS grade: activate to sort column ascending">
+                                        @lang('app.OPTIONS')
                                     </th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody class="tbody_font">
                                 @foreach ($showData as $singleData)
                                     <tr role="row" class="odd">
                                         <td tabindex="0" class="sorting_1">{{ $singleData->id }}</td>
@@ -71,18 +74,20 @@
                                         </td>
                                         <td class="option_ud col_width">
                                             @if (Auth::user()->hasPermission('users-delete'))
-                                                <a href="{{ url("/user/$singleData->id") }}" class="btn btn-danger"
-                                                    type="submit">Delete</a>
+                                                <a href="{{ url("/user/$singleData->id") }}"
+                                                    class="btn btn-danger update_btn" type="submit">Delete</a>
                                             @else
-                                                <button disabled class="btn btn-danger" type="button">Delete</button>
+                                                <button disabled class="btn btn-danger update_btn"
+                                                    type="button">Delete</button>
                                             @endif
                                             @if (Auth::user()->hasPermission('users-update'))
                                                 <a href="{{ route('user.edit', ['user' => $singleData->id]) }}"
                                                     type="submit"
                                                     class="btn
-                                                        btn-primary">Update</a>
+                                                        btn-primary update_btn">Update</a>
                                             @else
-                                                <button disabled class="btn btn-primary" type="button">Update</button>
+                                                <button disabled class="btn btn-primary update_btn"
+                                                    type="button">Update</button>
                                             @endif
                                         </td>
                                     </tr>
@@ -90,12 +95,12 @@
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <th rowspan="1" colspan="1">ID</th>
-                                    <th rowspan="1" colspan="1">USER_NAME</th>
-                                    <th rowspan="1" colspan="1">EMAIL</th>
-                                    <th rowspan="1" colspan="1">ROLES</th>
-                                    <th rowspan="1" colspan="1">PERMISSIONS</th>
-                                    <th rowspan="1" colspan="1">OPTIONS</th>
+                                    <th rowspan="1" colspan="1">@lang('app.ID')</th>
+                                    <th rowspan="1" colspan="1">@lang('app.USER_NAME')</th>
+                                    <th rowspan="1" colspan="1">@lang('app.EMAIL')</th>
+                                    <th rowspan="1" colspan="1">@lang('app.ROLES')</th>
+                                    <th rowspan="1" colspan="1">@lang('app.PERMISSIONS')</th>
+                                    <th rowspan="1" colspan="1">@lang('app.OPTIONS')</th>
                                 </tr>
                             </tfoot>
                         </table>
@@ -125,6 +130,11 @@
             $("#example1").DataTable({
                 "responsive": true,
                 "autoWidth": false,
+                @if (App::getLocale() == 'ar')
+                    "language": {
+                        "url": '//cdn.datatables.net/plug-ins/1.13.1/i18n/ar.json'
+                    },
+                @endif
             });
         });
     </script>

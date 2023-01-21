@@ -1,6 +1,7 @@
 
 .add_btn {
-    width: 10%;
+    width: 12%;
+    height: 36px !important;
     border-color: none !important;
     border-radius: 20px;
     -webkit-border-radius: 20px;
@@ -22,4 +23,16 @@
 }
 .formButton:hover {
     color: #000;
+}
+.update_btn {
+    width: 60px !important;
+    font-size: 10px;
+}
+.tbody_font, .form-control {
+    font-size: 15px !important;
+}
+
+.card-title {
+    float: none !important;
+    font-weight: 600 !important;
 }
