@@ -7,6 +7,7 @@ use App\Models\user;
 use App\Models\Permission;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Intervention\Image\Facades\Image;
 
 class UserController extends Controller
 {
@@ -53,13 +54,24 @@ class UserController extends Controller
             'name' => 'required|min:3|max:90',
             'email' => 'required|email|unique:users',
             'password' => 'required|min:6|max:25',
+            'image' => 'image|mimes:png,jpg,jpeg,tiff,svg,webb|max:3048'
         ]);
+
+        if ($request->file('image')) {
+            $imageName = uniqid() . $request->file('image')->getClientOriginalName();
+            // $imageName = uniqid() . 'Image';
+            Image::make($request->file('image'))->resize(100, null, function ($constraint) {
+                $constraint->aspectRatio();
+            })->save(public_path('public/uploads/users/' . $imageName));
+        }
 
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'image' => $imageName,
         ]);
+
         $user->attachRole($request->user_role);
         $user->attachPermissions($request->perms);
 

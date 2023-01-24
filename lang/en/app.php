@@ -56,4 +56,5 @@ return [
     'ADD' => 'ADD',
     'CANCEL' => 'CANCEL',
     'UPDATE' => 'UPDATE',
+    'DELETE' => 'DELETE'
 ];

@@ -9,18 +9,33 @@
     <div class="card card-primary">
         <div class="card-header">
             <h3 class="card-title">@lang('app.ADD NEW')</h3>
+            <img id="img-preview" class="card-image" src="{{ asset('uploads/users/default.png') }}" alt="User_Image"
+                srcset="">
         </div>
         <!-- /.card-header -->
         <!-- form start -->
-        <form role="form" action="{{ route('user.store') }}" method="post">
+        <form role="form" action="{{ route('user.store') }}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="card-body">
                 <div class="form-group">
                     <label for="exampleInputEmail1">@lang('app.USER_NAME')</label>
                     <input type="text" name="name" value="{{ old('name') }}" class="form-control"
-                        id="exampleInputEmail1" placeholder="@lang('app.Enter') @lang('app.USER_NAME')">
+                        id="exampleInputName" placeholder="@lang('app.Enter') @lang('app.USER_NAME')">
                 </div>
                 @error('name')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
+                <div class="form-group">
+                    <label for="exampleInputFile">User_Image</label>
+                    <div class="input-group">
+                        <div class="custom-file">
+                            <input type="file" onchange="showPreview(event)" class="custom-file-input" name="image"
+                                id="exampleInputFile">
+                            <label class="custom-file-label" for="exampleInputFile">Choose Image</label>
+                        </div>
+                    </div>
+                </div>
+                @error('image')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
                 <div class="form-group">
@@ -77,4 +92,16 @@
 @section('page_style')
     <!-- SpecialStyles -->
     <link rel="stylesheet" href="{{ asset('first/styles/showData.css') }}">
+@endsection
+
+@section('page_js')
+    <script>
+        function showPreview(event) {
+            if (event.target.files.length > 0) {
+                let src = URL.createObjectURL(event.target.files[0]);
+                let preview = document.getElementById('img-preview');
+                preview.src = src;
+            }
+        }
+    </script>
 @endsection
