@@ -1,0 +1,26 @@
+
+
+body, main {
+    background-color: #f3fdfc !important;
+}
+
+.nav_color {
+    color: #32a2df !important;
+}
+
+.title, .wow {
+    color: #210e7f !important;
+}
+
+.btn_first {
+    width: 50%;
+    display: grid;
+    place-items: center;
+    background-color: #210e7f;
+    color: #f3fdfc !important;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+}

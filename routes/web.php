@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeSliderController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
@@ -45,12 +46,17 @@ Route::group(
             return 'You Are Not Allowed';
         });
 
+        Route::get('/frontPages', function () {
+            return view('front');
+        });
+
         Route::resources([
             // 'category' => CategoryController::class,
             // 'product' => ProductController::class,
             // 'brand' => BrandController::class,
             // 'task' => TaskController::class,
             // 'project' => ProjectController::class,
+            'HomeSlider' => HomeSliderController::class,
             'user' => UserController::class,
         ]);
     }

@@ -7,6 +7,7 @@ use App\Models\user;
 use App\Models\Permission;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
 
 class UserController extends Controller
@@ -58,11 +59,12 @@ class UserController extends Controller
         ]);
 
         if ($request->file('image')) {
-            $imageName = uniqid() . $request->file('image')->getClientOriginalName();
-            // $imageName = uniqid() . 'Image';
+            // $imageName = uniqid() . $request->file('image')->getClientOriginalName();
+            // $imageName = uniqid() . 'Image' . '.' . $request->file('image')->getClientOriginalExtension();
+            $imageName = uniqid() . 'Image' . '.' . $request->file('image')->extension();
             Image::make($request->file('image'))->resize(100, null, function ($constraint) {
                 $constraint->aspectRatio();
-            })->save(public_path('public/uploads/users/' . $imageName));
+            })->save(public_path('uploads/users/' . $imageName));
         }
 
         $user = User::create([
@@ -121,7 +123,20 @@ class UserController extends Controller
             'name' => 'required|min:3|max:90',
             'email' => 'required|email',
             'password' => 'required|min:6',
+            'image' => 'image|mimes:png,jpg,jpeg,tiff,svg,webb|max:3048',
         ]);
+
+        if ($request->file('image')) {
+            if ($user->image != 'default.png') {
+                unlink(public_path('uploads/users/' . $user->image));
+                //Storage::disk('public_uploads')->delete('users/' . $user->image);
+            }
+            $imageName = uniqid() . 'Image' . '.' . $request->file('image')->extension();
+            Image::make($request->file('image'))->resize(100, null, function ($constraint) {
+                $constraint->aspectRatio();
+            })->save(public_path('uploads/users/' . $imageName));
+            $user->update(['image' => $imageName]);
+        }
 
         $user->update([
             'name' => $request->name,
@@ -147,6 +162,10 @@ class UserController extends Controller
      */
     public function destroy(user $user)
     {
+        if ($user->image != 'default.png') {
+            Storage::disk('public_uploads')->delete('users/' . $user->image);
+        }
+
         $user->detachRoles($user->Roles);
         $user->detachPermissions($user->Permissions);
 

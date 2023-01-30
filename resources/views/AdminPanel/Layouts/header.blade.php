@@ -138,11 +138,11 @@
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src="{{ asset('AdminPanel/dist/img/user2-160x160.jpg') }}"
-                            class="img-circle elevation-2" alt="User Image">
+                        <img src="{{ asset('uploads/users/' . Auth::user()->image) }}"
+                            class="img-circle elevation-2 usr_imgOne" alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">@lang('app.Welcome'), {{ Auth::user()->name }}</a>
+                        <a href="#" class="d-block usr_name">@lang('app.Welcome'), {{ Auth::user()->name }}</a>
                         <small class="show_email"
                             style="color:#c2c7d0; font-size: 10px;">{{ Auth::user()->email }}</small>
                     </div>
@@ -152,7 +152,7 @@
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                         data-accordion="false">
-
+                        <!-- Dashboard Menu -->
                         <li class="nav-item has-treeview menu-open">
                             <a href="{{ route('dashboard') }}"
                                 class="nav-link {{ Request::segment(2) == 'dashboard' ? 'active' : '' }}">
@@ -163,6 +163,7 @@
                                 </p>
                             </a>
                         </li>
+                        <!-- Users Menu -->
                         <li class="nav-item has-treeview">
                             <a href="{{ route('user.index') }}"
                                 class="nav-link {{ Request::segment(2) == 'user' ? 'active' : '' }}">
@@ -174,12 +175,12 @@
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
-                                {{-- @dump(Request::segment(3)) --}}
+
                                 <li class="nav-item">
                                     <a href="{{ route('user.index') }}"
                                         class="nav-link {{ Request::segment(3) == 'user' ? 'active' : '' }}">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>SHOW </p>
+                                        <p>@lang('app.SHOW') </p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
@@ -187,17 +188,120 @@
                                         <a href="{{ url('/user/create') }}"
                                             class="nav-link {{ Request::segment(3) == 'create' ? 'active' : '' }}">
                                             <i class="far fa-circle nav-icon"></i>
-                                            <p>ADD </p>
+                                            <p>@lang('app.ADD') </p>
                                         </a>
-                                        {{-- @else
+                                    @else
                                         <button disabled class="nav-link" type="button">
                                             <i class="far fa-circle nav-icon"></i>
-                                            <p>ADD </p>
-                                        </button> --}}
+                                            <p>@lang('app.ADD') </p>
+                                        </button>
                                     @endif
                                 </li>
                             </ul>
                         </li>
+                        <!-- Roles Menu -->
+                        <li class="nav-item has-treeview">
+                            <a href="{{ route('user.index') }}"
+                                class="nav-link {{ Request::segment(2) == 'roles' ? 'active' : '' }}">
+                                <i class="fa-solid fa-users"></i>
+                                <p class="crud">
+                                    @lang('app.ROLES')
+                                    <i class="fas fa-angle-left right"></i>
+
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+
+                                <li class="nav-item">
+                                    <a href="{{ route('user.index') }}"
+                                        class="nav-link {{ Request::segment(3) == 'roles' ? 'active' : '' }}">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>@lang('app.SHOW') </p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    @if (Auth::user()->hasPermission('users-create'))
+                                        <a href="{{ url('/user/create') }}"
+                                            class="nav-link {{ Request::segment(3) == 'create' ? 'active' : '' }}">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>@lang('app.ADD') </p>
+                                        </a>
+                                    @else
+                                        <button disabled class="nav-link" type="button">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>@lang('app.ADD') </p>
+                                        </button>
+                                    @endif
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- Permssions Menu -->
+                        <li class="nav-item has-treeview">
+                            <a href="{{ route('user.index') }}"
+                                class="nav-link {{ Request::segment(2) == 'permission' ? 'active' : '' }}">
+                                <i class="fa-solid fa-users"></i>
+                                <p class="crud">
+                                    @lang('app.PERMISSIONS')
+                                    <i class="fas fa-angle-left right"></i>
+
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+
+                                <li class="nav-item">
+                                    <a href="{{ route('user.index') }}"
+                                        class="nav-link {{ Request::segment(3) == 'permission' ? 'active' : '' }}">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>@lang('app.SHOW') </p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    @if (Auth::user()->hasPermission('users-create'))
+                                        <a href="{{ url('/user/create') }}"
+                                            class="nav-link {{ Request::segment(3) == 'create' ? 'active' : '' }}">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>@lang('app.ADD') </p>
+                                        </a>
+                                    @else
+                                        <button disabled class="nav-link" type="button">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>@lang('app.ADD') </p>
+                                        </button>
+                                    @endif
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- HomeSlider Menu -->
+                        <li class="nav-item has-treeview">
+                            <a href="{{ route('HomeSlider.index') }}"
+                                class="nav-link {{ Request::segment(2) == 'HomeSlider' ? 'active' : '' }}">
+                                <i class="fa-solid fa-users"></i>
+                                <p class="crud">
+                                    @lang('app.HomeSlider')
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+
+                                <li class="nav-item">
+                                    <a href="{{ route('HomeSlider.index') }}"
+                                        class="nav-link {{ Request::segment(3) == 'HomeSlider' ? 'active' : '' }}">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>@lang('app.SHOW') </p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+
+                                    <a href="{{ url('/HomeSlider/create') }}"
+                                        class="nav-link {{ Request::segment(3) == 'create' ? 'active' : '' }}">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>@lang('app.ADD') </p>
+                                    </a>
+
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- Layout Menu -->
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-copy"></i>

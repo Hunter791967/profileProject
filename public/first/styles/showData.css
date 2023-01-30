@@ -25,7 +25,10 @@
     color: #000;
 }
 .update_btn {
-    width: 60px !important;
+    width: 40px !important;
+    height: 18px;
+    text-align: left !important;
+    padding: 0;
     font-size: 10px;
 }
 .tbody_font, .form-control {
@@ -42,6 +45,12 @@
     flex-direction: row;
     align-items: center;
 }
+.showCard-Header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start !important;
+    height: 90px !important;
+}
 .card-image {
     margin-left: 20px;
     width: 50px;
@@ -51,4 +60,46 @@
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
+}
+
+.disp_center {
+    display: grid;
+    place-items: center;
+}
+.usr_img {
+    width: 60px !important;
+    height: 60px !important;
+    border: none;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+.usr_imgOne {
+    width: 50px !important;
+    height: 50px !important;
+    border: none;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+.usr_name {
+    font-size: 13px;
+}
+/*** Data Table *****************************************************************************************************/
+.dataTable tbody {
+    font-size: 10px !important;
+}
+.dataTable thead, .dataTable tfoot {
+    font-size: 12px !important;
+}
+.col_width {
+    padding: 0 !important;
+    padding-left: 4px !important;
+}
+.table th, .table td {
+    vertical-align: middle;
 }
