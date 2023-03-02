@@ -14,7 +14,7 @@
         </div>
         <!-- /.card-header -->
         <!-- form start -->
-        <form role="form" action="{{ route('HomeSlider.update', ['homeSlider' => $homeSlider->id]) }}" method="post"
+        <form role="form" action="{{ route('HomeSlider.update', ['HomeSlider' => $homeSlider->id]) }}" method="post"
             enctype="multipart/form-data">
             @csrf
             @method('PUT')
@@ -29,7 +29,7 @@
                 @enderror
                 <div class="form-group">
                     <label for="exampleInputEmail1">@lang('app.SUB_TITLE')</label>
-                    <input type="text" name="sub_title" value="{{ old('sub_title') }}" class="form-control"
+                    <input type="text" name="sub_title" value="{{ $homeSlider->sub_title }}" class="form-control"
                         id="exampleInputName" placeholder="@lang('app.Enter') @lang('app.SUB_TITLE')">
                 </div>
                 @error('sub_title')
@@ -37,7 +37,7 @@
                 @enderror
                 <div class="form-group">
                     <label for="exampleInputEmail1">@lang('app.TITLE_DESC')</label>
-                    <input type="text" name="title_desc" value="{{ old('title_desc') }}" class="form-control"
+                    <input type="text" name="title_desc" value="{{ $homeSlider->title_desc }}" class="form-control"
                         id="exampleInputName" placeholder="@lang('app.Enter') @lang('app.TITLE_DESC')">
                 </div>
                 @error('title_desc')
@@ -49,7 +49,7 @@
                         <div class="custom-file">
                             <input type="file" onchange="showPreview(event)" class="custom-file-input" name="panner"
                                 id="exampleInputFile">
-                            <label class="custom-file-label" for="exampleInputFile">Choose Image</label>
+                            <label class="custom-file-label" for="exampleInputFile">{{ $homeSlider->panner }}</label>
                         </div>
                     </div>
                 </div>
@@ -61,16 +61,17 @@
                     <div class="input-group">
                         <div class="custom-file">
                             <input type="file" class="custom-file-input" name="section_video" id="exampleInputFile">
-                            <label class="custom-file-label" for="exampleInputFile">Choose Video</label>
+                            <label class="custom-file-label"
+                                for="exampleInputFile">{{ $homeSlider->scetion_video }}</label>
                         </div>
                     </div>
                 </div>
-                @error('section_video')
+                @error('scetion_video')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
                 <div class="form-group">
                     <label for="exampleInputEmail1">@lang('app.BTN_TEXT')</label>
-                    <input type="text" name="btn_text" value="{{ old('btn_text') }}" class="form-control"
+                    <input type="text" name="btn_text" value="{{ $homeSlider->btn_text }}" class="form-control"
                         id="exampleInputEmail1" placeholder="@lang('app.Enter') @lang('app.BTN_TEXT')">
                 </div>
                 @error('btn_text')

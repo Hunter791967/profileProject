@@ -27,6 +27,8 @@
     <link rel="stylesheet" href="{{ asset('AdminPanel/plugins/daterangepicker/daterangepicker.css') }}">
     <!-- summernote -->
     <link rel="stylesheet" href="{{ asset('AdminPanel/plugins/summernote/summernote-bs4.css') }}">
+    <!-- Special Style -->
+    <link rel="stylesheet" href="{{ asset('AdminPanel/dist/css/header_style.css') }}">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     <!-- Custom Style For Arabic -->
@@ -159,6 +161,18 @@
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     @lang('app.Dashboard')
+
+                                </p>
+                            </a>
+                        </li>
+                        <!-- Front Pages -->
+                        <li class="nav-item has-treeview menu-open">
+                            <a href="{{ url('frontPages') }}"
+                                class="nav-link {{ Request::segment(2) == 'fontPages' ? 'active' : '' }}">
+                                {{-- <i class="nav-icon fas fa-tachometer-alt"></i> --}}
+                                <img src="{{ asset('images/portfolio01.png') }}" width="20px" alt="">
+                                <p class="crud">
+                                    @lang('app.FRONTSIDE')
 
                                 </p>
                             </a>
@@ -298,6 +312,106 @@
                                         <p>@lang('app.ADD') </p>
                                     </a>
 
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- About Menu -->
+                        <li class="nav-item has-treeview">
+                            <a href="{{ route('About.index') }}"
+                                class="nav-link {{ Request::segment(2) == 'About' ? 'active' : '' }}">
+                                <i class="fa-solid fa-users"></i>
+                                <p class="crud">
+                                    @lang('app.ABOUT')
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+
+                                <li class="nav-item">
+                                    <a href="{{ route('About.index') }}"
+                                        class="nav-link {{ Request::segment(3) == 'About' ? 'active' : '' }}">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>@lang('app.ABOUT') </p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+
+                                    <a href="{{ route('Gallery.index') }}"
+                                        class="nav-link {{ Request::segment(3) == 'Gallery' ? 'active' : '' }}">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>@lang('app.GALLERY') </p>
+                                    </a>
+
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('skill.index') }}"
+                                        class="nav-link {{ Request::segment(3) == 'skill' ? 'active' : '' }}">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>@lang('app.SKILLS') </p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('competency.index') }}"
+                                        class="nav-link {{ Request::segment(3) == 'competency' ? 'active' : '' }}">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>@lang('app.COMPETENCIES') </p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('academic.index') }}"
+                                        class="nav-link {{ Request::segment(3) == 'academic' ? 'active' : '' }}">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>@lang('app.ACADEMIC HISTORY') </p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- Services Menu -->
+                        <li class="nav-item has-treeview">
+                            <a href="{{ route('service.index') }}"
+                                class="nav-link {{ Request::segment(2) == 'service' ? 'active' : '' }}">
+                                <i class="fa-solid fa-users"></i>
+                                <p class="crud">
+                                    @lang('app.SERVICES')
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+
+                                <li class="nav-item">
+                                    <a href="{{ route('service.index') }}"
+                                        class="nav-link {{ Request::segment(3) == 'service' ? 'active' : '' }}">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>@lang('app.SERVICES') </p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('mainService.index') }}"
+                                        class="nav-link {{ Request::segment(3) == 'mainService' ? 'active' : '' }}">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>@lang('app.MAIN') @lang('app.SERVICES') </p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('contactDetail.index') }}"
+                                        class="nav-link {{ Request::segment(3) == 'contactDetail' ? 'active' : '' }}">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>@lang('app.CONTACT')</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('contactIcon.index') }}"
+                                        class="nav-link {{ Request::segment(3) == 'contactIcon' ? 'active' : '' }}">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>@lang('app.CONTACT') @lang('app.ICONS') </p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('prospectDetail.index') }}"
+                                        class="nav-link {{ Request::segment(3) == 'prospectDetail' ? 'active' : '' }}">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>@lang('app.PROSPECT DETAILS') </p>
+                                    </a>
                                 </li>
                             </ul>
                         </li>

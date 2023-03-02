@@ -58,12 +58,12 @@
                     <label for="exampleInputFile">@lang('app.VIDEO')</label>
                     <div class="input-group">
                         <div class="custom-file">
-                            <input type="file" class="custom-file-input" name="section_video" id="exampleInputFile">
+                            <input type="file" class="custom-file-input" name="scetion_video" id="exampleInputFile">
                             <label class="custom-file-label" for="exampleInputFile">Choose Video</label>
                         </div>
                     </div>
                 </div>
-                @error('section_video')
+                @error('scetion_video')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
                 <div class="form-group">

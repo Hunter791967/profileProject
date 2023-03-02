@@ -2,11 +2,16 @@
 
 namespace App\Providers;
 
-use Illuminate\Cache\RateLimiting\Limit;
-use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
+use App\Models\HomeSlider;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\RateLimiter;
+use App\Models\FrontPages\About;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Cache\RateLimiting\Limit;
+use App\Http\Controllers\AboutController;
+use Illuminate\Support\Facades\RateLimiter;
+use App\Http\Controllers\FrontPages\FrontController;
+use App\Models\Service;
+use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -35,6 +40,11 @@ class RouteServiceProvider extends ServiceProvider
 
             Route::middleware('web')
                 ->group(base_path('routes/web.php'));
+
+            Route::model('HomeSlider', HomeSlider::class);
+            Route::model('About', About::class);
+            Route::model('service', Service::class);
+            Route::model('about', FrontController::class);
         });
     }
 

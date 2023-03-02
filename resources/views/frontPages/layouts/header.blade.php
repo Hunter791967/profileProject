@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>@yield('page_name', 'No Name')</title>
+    <title>@yield('page_title', 'No Name')</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -43,60 +43,69 @@
                             <nav class="menu__nav">
                                 <div class="logo">
                                     <a href="index.html" class="logo__black"><img
-                                            src="{{ asset('frontDesign/img/logo/myLogo02.png') }}" alt=""></a>
+                                            src="{{ asset('frontDesign/img/logo/amr_logo00.png') }}"
+                                            alt=""></a>
                                     <a href="index.html" class="logo__white"><img
-                                            src="{{ asset('frontDesign/img/logo/myLogo02.png') }}" alt=""></a>
+                                            src="{{ asset('frontDesign/img/logo/amr_logo00.png') }}"
+                                            alt=""></a>
                                 </div>
                                 <div class="navbar__wrap main__menu d-none d-xl-flex">
                                     <ul class="navigation">
-                                        <li class="active"><a class="nav_color" href="index.html">Home</a></li>
-                                        <li><a class="nav_color" href="about.html">About</a></li>
-                                        <li><a class="nav_color" href="services-details.html">Services</a></li>
+                                        <li class="active"><a class="nav_color" href="{{ url('frontPages') }}">Home</a>
+                                        </li>
+                                        <li><a class="nav_color" href="{{ url('about') }}">Info
+                                                About</a></li>
+                                        <li><a class="nav_color" href="{{ url('services') }}">Profissional Services</a>
+                                        </li>
                                         <li class="menu-item-has-children"><a class="nav_color"
-                                                href="#">Portfolio</a>
+                                                href="#">Experience</a>
                                             <ul class="sub-menu">
                                                 <li><a class="nav_color" href="portfolio.html">Portfolio</a></li>
                                                 <li><a href="portfolio-details.html">Portfolio Details</a></li>
                                             </ul>
                                         </li>
-                                        <li class="menu-item-has-children"><a class="nav_color" href="#">Our
+                                        {{-- <li class="menu-item-has-children"><a class="nav_color" href="#">Our
                                                 Blog</a>
                                             <ul class="sub-menu">
                                                 <li><a href="blog.html">Our News</a></li>
                                                 <li><a href="blog-details.html">News Details</a></li>
                                             </ul>
-                                        </li>
-                                        <li><a class="nav_color" href="contact.html">contact me</a></li>
+                                        </li> --}}
+                                        <li><a class="nav_color" href="contact.html">details</a></li>
                                     </ul>
                                 </div>
-                                <div class="header__btn d-none d-md-block">
-                                    {{-- <a href="contact.html" class="btn">Contact me</a> --}}
+                                <div class="header__btn d-none d-md-block log_main">
+                                    <div class="arabic_icon">
+                                        <a href=""><img
+                                                src="{{ asset('frontDesign/img/icons/arabic_icon00.png') }}"
+                                                alt="Arabic_Icon" width="36"></a>
+                                    </div>
                                     <div class="log_links">
 
-                                        @if (Route::has('login'))
-                                            <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                                                @auth
+                                        {{-- @if (Route::has('login')) --}}
+                                        <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block log_flex">
+                                            {{-- @auth --}}
 
-                                                    @if (!Auth::user()->hasRole('user'))
-                                                        <a class="headers_link" href="{{ url('/dashboard') }}"
-                                                            class="text-sm text-gray-700 dark:text-gray-500 underline">{{ __('app.Dashboard') }}</a>
-                                                    @endif
-                                                    <form action="{{ route('logout') }}" method="post">
+                                            {{-- @if (!Auth::user()->hasRole('user')) --}}
+                                            {{-- <a class="headers_link" href="{{ url('/dashboard') }}"
+                                                            class="text-sm text-gray-700 dark:text-gray-500 underline">{{ __('app.Dashboard') }}</a> --}}
+                                            {{-- @endif --}}
+                                            {{-- <form action="{{ route('logout') }}" method="post">
                                                         @csrf
                                                         <button class="logout_btn">{{ __('app.LOG OUT') }}</button>
-                                                    </form>
-                                                @else
-                                                    <a class="headers_link headers_left" href="{{ route('login') }}"
-                                                        class="text-sm text-gray-700 dark:text-gray-500 underline">Log
-                                                        In</a>
+                                                    </form> --}}
+                                            {{-- @else --}}
+                                            <a class="headers_link headers_left" href="{{ route('login') }}"
+                                                class="text-sm text-gray-700 dark:text-gray-500 underline">Log
+                                                In</a>
 
-                                                    @if (Route::has('register'))
-                                                        <a class="headers_link" href="{{ route('register') }}"
-                                                            class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-                                                    @endif
-                                                @endauth
-                                            </div>
-                                        @endif
+                                            {{-- @if (Route::has('register')) --}}
+                                            <a class="headers_link" href="{{ route('register') }}"
+                                                class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
+                                            {{-- @endif
+                                                @endauth --}}
+                                        </div>
+                                        {{-- @endif --}}
                                     </div>
                                 </div>
                             </nav>

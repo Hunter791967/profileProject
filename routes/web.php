@@ -1,9 +1,20 @@
 <?php
 
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\AcademicController;
+use App\Http\Controllers\CompetencyController;
+use App\Http\Controllers\ContactDetailController;
+use App\Http\Controllers\ContactIconController;
+use App\Http\Controllers\FrontPages\FrontController;
+use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\HomeSliderController;
+use App\Http\Controllers\MainServiceController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProspectDetailController;
+use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\SkillController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 /*
@@ -46,18 +57,26 @@ Route::group(
             return 'You Are Not Allowed';
         });
 
-        Route::get('/frontPages', function () {
-            return view('front');
-        });
+        Route::get('/frontPages', [FrontController::class, 'front']);
+        Route::get('/about', [FrontController::class, 'about']);
+        Route::get('/services', [FrontController::class, 'service']);
+        Route::post('/front/{id?}', [FrontController::class, 'store'])->name('front.store');
 
         Route::resources([
             // 'category' => CategoryController::class,
             // 'product' => ProductController::class,
-            // 'brand' => BrandController::class,
-            // 'task' => TaskController::class,
-            // 'project' => ProjectController::class,
+            'About' => AboutController::class,
+            'Gallery' => GalleryController::class,
             'HomeSlider' => HomeSliderController::class,
             'user' => UserController::class,
+            'skill' => SkillController::class,
+            'competency' => CompetencyController::class,
+            'academic' => AcademicController::class,
+            'service' => ServiceController::class,
+            'mainService' => MainServiceController::class,
+            'contactDetail' => ContactDetailController::class,
+            'contactIcon' => ContactIconController::class,
+            'prospectDetail' => ProspectDetailController::class,
         ]);
     }
 );
