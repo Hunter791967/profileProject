@@ -104,5 +104,17 @@ return [
     'MESSAGES' => 'الرسائل',
     'MESSAGE' => 'الرسالة',
     'PROSPECT DETAILS' => 'تفاصيل العميل',
+    'METHODOLOGY' => 'منهج',
+    'METHODOLOGIES' => 'منهجيات',
+    'DETAIL' => 'تفصيل',
+    'PROJECT' => 'المشروع',
+    'PROJECTS' => 'المشروعات',
+    'PROJTYPE' => 'نوع المشروع',
+    'LOCATION' => 'العنوان',
+    'PERIOD' => 'الفترة الزمنية',
+    'CLIENT' => 'العميل',
+    'DATE' => 'التاريخ',
+    'LINK' => 'موقع الربط',
+    'SELECT' => 'اختر',
 
 ];

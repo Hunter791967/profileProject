@@ -9,12 +9,17 @@ use App\Http\Controllers\FrontPages\FrontController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\HomeSliderController;
 use App\Http\Controllers\MainServiceController;
+use App\Http\Controllers\MethodologyController;
+use App\Http\Controllers\MethodologyDetailController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\ProjTypeController;
 use App\Http\Controllers\ProspectDetailController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SkillController;
+use App\Models\Project;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 /*
@@ -77,6 +82,10 @@ Route::group(
             'contactDetail' => ContactDetailController::class,
             'contactIcon' => ContactIconController::class,
             'prospectDetail' => ProspectDetailController::class,
+            'methodology' => MethodologyController::class,
+            'methodologyDetail' => MethodologyDetailController::class,
+            'project' => ProjectController::class,
+            'projType' => ProjTypeController::class,
         ]);
     }
 );

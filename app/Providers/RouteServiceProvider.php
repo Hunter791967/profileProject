@@ -10,6 +10,8 @@ use Illuminate\Cache\RateLimiting\Limit;
 use App\Http\Controllers\AboutController;
 use Illuminate\Support\Facades\RateLimiter;
 use App\Http\Controllers\FrontPages\FrontController;
+use App\Models\FrontPages\Methodology;
+use App\Models\ProjType;
 use App\Models\Service;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
@@ -45,6 +47,7 @@ class RouteServiceProvider extends ServiceProvider
             Route::model('About', About::class);
             Route::model('service', Service::class);
             Route::model('about', FrontController::class);
+            Route::model('projType', ProjType::class);
         });
     }
 

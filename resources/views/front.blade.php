@@ -1,4 +1,5 @@
-@extends('frontPages.layouts.app', ['phone' => $contactDetails->phone, 'address' => $contactDetails->address, 'email => $contactDetails->email', 'main_title' => $mainService->main_title])
+{{-- @extends('frontPages.layouts.app', ['phone' => $contactDetails->phone, 'address' => $contactDetails->address, 'email => $contactDetails->email', 'main_title' => $mainService->main_title]) --}}
+@extends('frontPages.layouts.app')
 @section('content')
     <!-- main-area -->
     <main>
@@ -110,8 +111,8 @@
                                     </div>
                                     <h3 class="title"><a href="services-details.html">{{ $singleSer->name }}</a></h3>
                                     <div class="services_tab">
-                                        {!! $singleSer->service_tab !!}
-                                        {{-- <a href="services-details.html" class="btn border-btn service_btn">Read more</a> --}}
+                                        {{-- {!! $singleSer->service_tab !!} --}}
+                                        {!! Str::limit($singleSer->service_tab, 400) !!}
                                     </div>
                                     <a href="{{ url('services') }}" class="btn border-btn service_btn">Read more</a>
                                 </div>
@@ -130,72 +131,133 @@
                 <div class="row justify-content-center">
                     <div class="col-xl-6 col-lg-8">
                         <div class="section__title text-center">
-                            <span class="sub-title">03 - Working Process</span>
-                            <h2 class="title">A clear product design process is the basis of success</h2>
+                            <span class="sub-title">03 - My Project Management Methodologies</span>
+                            <h2 class="title">I Use Agile & SAP Activation Methodologies</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="methodology">
+                    <div class="methodologyEast">
+                        <div class="methodology_name">
+                            <h4>{{ $methodolgyOne->name }}</h4>
+                            <div class="horiz_line"></div>
+                        </div>
+                        <div class="methodology_image"><img
+                                src="{{ asset('uploads/methodology/' . $methodolgyOne->image) }}" alt="First_Methodology"
+                                class="methodology_imagesrc">
+                        </div>
+                    </div>
+                    <div class="methodologyWest">
+                        <div class="webApplication_progress">
+                            <h4>Web Application Development Progress Bar</h4>
+                            <div class="horiz_line"></div>
+                        </div>
+                        <div class="methodology_container">
+                            <input type="radio" class="radio" name="progress" value="five" id="five" checked>
+                            <label for="five" class="label">5%</label>
+
+                            <input type="radio" class="radio" name="progress" value="twenty" id="twenty">
+                            <label for="twenty" class="label">20%</label>
+
+                            <input type="radio" class="radio" name="progress" value="fourty" id="fourty">
+                            <label for="fourty" class="label">40%</label>
+
+                            <input type="radio" class="radio" name="progress" value="sixty" id="sixty">
+                            <label for="sixty" class="label">60%</label>
+
+                            <input type="radio" class="radio" name="progress" value="eighty" id="eighty">
+                            <label for="eighty" class="label">80%</label>
+
+                            <input type="radio" class="radio" name="progress" value="onehundred" id="onehundred">
+                            <label for="onehundred" class="label">100%</label>
+
+                            <div class="progress">
+                                <div class="progress-bar"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="row work__process__wrap">
-                    <div class="col">
-                        <div class="work__process__item">
-                            <span class="work__process_step">Step - 01</span>
-                            <div class="work__process__icon">
-                                <img class="light" src="{{ asset('frontDesign/img/icons/wp_light_icon01.png') }}"
-                                    alt="">
-                                <img class="dark" src="{{ asset('frontDesign/img/icons/wp_icon01.png') }}"
-                                    alt="">
+                    @foreach ($methodologyDetail as $singleMeth)
+                        <div class="col">
+                            <div class="work__process__item">
+                                <div class="work__process__icon">
+                                    <img class="light"
+                                        src="{{ asset('uploads/methodologyDetails/' . $singleMeth->icon_image) }}"
+                                        alt="Methodology Icon">
+                                    <img class="dark"
+                                        src="{{ asset('uploads/methodologyDetails/' . $singleMeth->icon_image) }}"
+                                        alt="Methodology Icon">
+                                </div>
+                                <div class="work__process__content">
+                                    <h4 class="title">{{ $singleMeth->name }}</h4>
+                                    <p>{{ $singleMeth->methodology_desc }}</p>
+                                </div>
                             </div>
-                            <div class="work__process__content">
-                                <h4 class="title">Discover</h4>
-                                <p>Initial ideas or inspiration & Establishment of user needs.</p>
+                        </div>
+                    @endforeach
+                </div>
+                <div class="methodologyTwo">
+                    <div class="methodologyEast">
+                        <div class="methodology_name">
+                            <h4>{{ $methodolgyTwo->name }}</h4>
+                            <div class="horiz_line"></div>
+                        </div>
+                        <div class="methodology_image"><img
+                                src="{{ asset('uploads/methodology/' . $methodolgyTwo->image) }}" alt="First_Methodology"
+                                class="methodology_imagesrc">
+                        </div>
+                    </div>
+                    <div class="methodologyWest">
+                        <div class="webApplication_progress">
+                            <h4>ERP Implementation Progress Bar</h4>
+                            <div class="horiz_line"></div>
+                        </div>
+                        <div class="methodology_container">
+                            <input type="radio" class="radio" name="progressOne" value="five" id="five"
+                                checked>
+                            <label for="five" class="label">5%</label>
+
+                            <input type="radio" class="radio" name="progressOne" value="twenty" id="twenty">
+                            <label for="twenty" class="label">20%</label>
+
+                            <input type="radio" class="radio" name="progressOne" value="fourty" id="fourty">
+                            <label for="fourty" class="label">40%</label>
+
+                            <input type="radio" class="radio" name="progressOne" value="sixty" id="sixty">
+                            <label for="sixty" class="label">60%</label>
+
+                            <input type="radio" class="radio" name="progressOne" value="eighty" id="eighty">
+                            <label for="eighty" class="label">80%</label>
+
+                            <input type="radio" class="radio" name="progressOne" value="onehundred" id="onehundred">
+                            <label for="onehundred" class="label">100%</label>
+
+                            <div class="progress">
+                                <div class="progress-bar"></div>
                             </div>
                         </div>
                     </div>
-                    <div class="col">
-                        <div class="work__process__item">
-                            <span class="work__process_step">Step - 02</span>
-                            <div class="work__process__icon">
-                                <img class="light" src="{{ asset('frontDesign/img/icons/wp_light_icon02.png') }}"
-                                    alt="">
-                                <img class="dark" src="{{ asset('frontDesign/img/icons/wp_icon02.png') }}"
-                                    alt="">
-                            </div>
-                            <div class="work__process__content">
-                                <h4 class="title">Define</h4>
-                                <p>Interpretation & Alignment of findings to project objectives.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="work__process__item">
-                            <span class="work__process_step">Step - 03</span>
-                            <div class="work__process__icon">
-                                <img class="light" src="{{ asset('frontDesign/img/icons/wp_light_icon03.png') }}"
-                                    alt="">
-                                <img class="dark" src="{{ asset('frontDesign/img/icons/wp_icon03.png') }}"
-                                    alt="">
-                            </div>
-                            <div class="work__process__content">
-                                <h4 class="title">Develop</h4>
-                                <p>Design-Led concept and Proposals hearted & assessed</p>
+                </div>
+                <div class="row work__process__wrap">
+                    @foreach ($methodologyDetailTwo as $singleMethTwo)
+                        <div class="col">
+                            <div class="work__process__item">
+                                <div class="work__process__icon">
+                                    <img class="light"
+                                        src="{{ asset('uploads/methodologyDetails/' . $singleMethTwo->icon_image) }}"
+                                        alt="Methodology Icon">
+                                    <img class="dark"
+                                        src="{{ asset('uploads/methodologyDetails/' . $singleMethTwo->icon_image) }}"
+                                        alt="Methodology Icon">
+                                </div>
+                                <div class="work__process__content">
+                                    <h4 class="title">{{ $singleMethTwo->name }}</h4>
+                                    <p>{{ $singleMethTwo->methodology_desc }}</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col">
-                        <div class="work__process__item">
-                            <span class="work__process_step">Step - 04</span>
-                            <div class="work__process__icon">
-                                <img class="light" src="{{ asset('frontDesign/img/icons/wp_light_icon04.png') }}"
-                                    alt="">
-                                <img class="dark" src="{{ asset('frontDesign/img/icons/wp_icon04.png') }}"
-                                    alt="">
-                            </div>
-                            <div class="work__process__content">
-                                <h4 class="title">Deliver</h4>
-                                <p>Process outcomes finalised & Implemented</p>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </section>
@@ -205,51 +267,28 @@
         <section class="portfolio">
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-xl-6 col-lg-8">
+                    <div class="col-xl-9 col-lg-8">
                         <div class="section__title text-center">
-                            <span class="sub-title">04 - Portfolio</span>
-                            <h2 class="title">All creative work</h2>
+                            <span class="sub-title">04 - Experience</span>
+                            <h2 class="title">Samples Of My Successful Previous Projects</h2>
                         </div>
                     </div>
                 </div>
-                <div class="row justify-content-center">
-                    <div class="col-xl-10 col-lg-12">
+                <div class="row proj_type">
+                    <div class="col-xl-12 col-lg-12">
                         <ul class="nav nav-tabs portfolio__nav" id="portfolioTab" role="tablist">
                             <li class="nav-item" role="presentation">
                                 <button class="nav-link active" id="all-tab" data-bs-toggle="tab"
                                     data-bs-target="#all" type="button" role="tab" aria-controls="all"
-                                    aria-selected="true">All</button>
+                                    aria-selected="true">{{ $projFirst->name }}</button>
                             </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="website-tab" data-bs-toggle="tab" data-bs-target="#website"
-                                    type="button" role="tab" aria-controls="website"
-                                    aria-selected="false">website</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="apps-tab" data-bs-toggle="tab" data-bs-target="#apps"
-                                    type="button" role="tab" aria-controls="apps" aria-selected="false">mobile
-                                    apps</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="dashboard-tab" data-bs-toggle="tab"
-                                    data-bs-target="#dashboard" type="button" role="tab" aria-controls="dashboard"
-                                    aria-selected="false">Dashboard</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="landing-tab" data-bs-toggle="tab" data-bs-target="#landing"
-                                    type="button" role="tab" aria-controls="landing" aria-selected="false">landing
-                                    page</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="branding-tab" data-bs-toggle="tab"
-                                    data-bs-target="#branding" type="button" role="tab" aria-controls="branding"
-                                    aria-selected="false">Branding</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="graphic-tab" data-bs-toggle="tab" data-bs-target="#graphic"
-                                    type="button" role="tab" aria-controls="graphic" aria-selected="false">Graphic
-                                    Design</button>
-                            </li>
+                            @foreach ($projType as $singleType)
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="all-tab" data-bs-toggle="tab" data-bs-target="#all"
+                                        type="button" role="tab" aria-controls="all"
+                                        aria-selected="true">{{ $singleType->name }}</button>
+                                </li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>
@@ -262,88 +301,30 @@
                                 <div class="portfolio__active">
                                     <div class="portfolio__item">
                                         <div class="portfolio__thumb">
-                                            <img src="{{ asset('frontDesign/img/portfolio/portfolio_img01.jpg') }}"
-                                                alt="">
+                                            <img src="{{ asset('uploads/projectTypes/' . $projFirst->image) }}"
+                                                alt="First Project Type">
                                         </div>
                                         <div class="portfolio__overlay__content">
-                                            <span>Apps Design</span>
-                                            <h4 class="title"><a href="portfolio-details.html">Banking Management
-                                                    System</a></h4>
+                                            <span>{{ $projFirst->name }}</span>
+                                            <h4 class="title"><a
+                                                    href="portfolio-details.html">{{ $projFirst->name }}</a></h4>
                                             <a href="portfolio-details.html" class="link">Case Study</a>
                                         </div>
                                     </div>
-                                    <div class="portfolio__item">
-                                        <div class="portfolio__thumb">
-                                            <img src="{{ asset('frontDesign/img/portfolio/portfolio_img02.jpg') }}"
-                                                alt="">
+                                    @foreach ($projType as $singleType)
+                                        <div class="portfolio__item">
+                                            <div class="portfolio__thumb">
+                                                <img src="{{ asset('uploads/projectTypes/' . $singleType->image) }}"
+                                                    alt="">
+                                            </div>
+                                            <div class="portfolio__overlay__content">
+                                                <span>{{ $singleType->name }}</span>
+                                                <h4 class="title"><a
+                                                        href="portfolio-details.html">{{ $singleType->name }}</a></h4>
+                                                <a href="portfolio-details.html" class="link">Case Study</a>
+                                            </div>
                                         </div>
-                                        <div class="portfolio__overlay__content">
-                                            <span>Web Design</span>
-                                            <h4 class="title"><a href="portfolio-details.html">Banking Management
-                                                    System</a></h4>
-                                            <a href="portfolio-details.html" class="link">Case Study</a>
-                                        </div>
-                                    </div>
-                                    <div class="portfolio__item">
-                                        <div class="portfolio__thumb">
-                                            <img src="{{ asset('frontDesign/img/portfolio/portfolio_img03.jpg') }}"
-                                                alt="">
-                                        </div>
-                                        <div class="portfolio__overlay__content">
-                                            <span>UX/UI Design</span>
-                                            <h4 class="title"><a href="portfolio-details.html">Banking Management
-                                                    System</a></h4>
-                                            <a href="portfolio-details.html" class="link">Case Study</a>
-                                        </div>
-                                    </div>
-                                    <div class="portfolio__item">
-                                        <div class="portfolio__thumb">
-                                            <img src="{{ asset('frontDesign/img/portfolio/portfolio_img04.jpg') }}"
-                                                alt="">
-                                        </div>
-                                        <div class="portfolio__overlay__content">
-                                            <span>Web Development</span>
-                                            <h4 class="title"><a href="portfolio-details.html">Banking Management
-                                                    System</a></h4>
-                                            <a href="portfolio-details.html" class="link">Case Study</a>
-                                        </div>
-                                    </div>
-                                    <div class="portfolio__item">
-                                        <div class="portfolio__thumb">
-                                            <img src="{{ asset('frontDesign/img/portfolio/portfolio_img05.jpg') }}"
-                                                alt="">
-                                        </div>
-                                        <div class="portfolio__overlay__content">
-                                            <span>Web Development</span>
-                                            <h4 class="title"><a href="portfolio-details.html">Banking Management
-                                                    System</a></h4>
-                                            <a href="portfolio-details.html" class="link">Case Study</a>
-                                        </div>
-                                    </div>
-                                    <div class="portfolio__item">
-                                        <div class="portfolio__thumb">
-                                            <img src="{{ asset('frontDesign/img/portfolio/portfolio_img06.jpg') }}"
-                                                alt="">
-                                        </div>
-                                        <div class="portfolio__overlay__content">
-                                            <span>Web Development</span>
-                                            <h4 class="title"><a href="portfolio-details.html">Banking Management
-                                                    System</a></h4>
-                                            <a href="portfolio-details.html" class="link">Case Study</a>
-                                        </div>
-                                    </div>
-                                    <div class="portfolio__item">
-                                        <div class="portfolio__thumb">
-                                            <img src="{{ asset('frontDesign/img/portfolio/portfolio_img07.jpg') }}"
-                                                alt="">
-                                        </div>
-                                        <div class="portfolio__overlay__content">
-                                            <span>Web Development</span>
-                                            <h4 class="title"><a href="portfolio-details.html">Banking Management
-                                                    System</a></h4>
-                                            <a href="portfolio-details.html" class="link">Case Study</a>
-                                        </div>
-                                    </div>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
@@ -1053,7 +1034,8 @@
                             </div>
                             <div class="blog__post__content">
                                 <span class="date">13 january 2021</span>
-                                <h3 class="title"><a href="blog-details.html">Facebook design is dedicated to what's new
+                                <h3 class="title"><a href="blog-details.html">Facebook design is dedicated to what's
+                                        new
                                         in design</a></h3>
                                 <a href="blog-details.html" class="read__more">Read mORe</a>
                             </div>
@@ -1089,7 +1071,8 @@
                             </div>
                             <div class="blog__post__content">
                                 <span class="date">13 january 2021</span>
-                                <h3 class="title"><a href="blog-details.html">How to increase your productivity at work -
+                                <h3 class="title"><a href="blog-details.html">How to increase your productivity at work
+                                        -
                                         2021</a></h3>
                                 <a href="blog-details.html" class="read__more">Read mORe</a>
                             </div>
@@ -1154,7 +1137,7 @@
     <!-- main-area-end -->
 @endsection
 
-@section('page_title', 'HomePage')
+@section('page_title', 'My Profile')
 
 @section('page_style')
     <link rel="stylesheet" href="{{ asset('first/styles/frontHome.css') }}">

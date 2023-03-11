@@ -64,6 +64,12 @@ body, main {
 .log_flex a:hover {
     border-bottom: 1px solid #210e7f;
 }
+
+.logo_bruch {
+    background: url(//s2.svgbox.net/pen-brushes.svg?ic=brush-1&color=a8f0e9);
+    margin: -2px -6px;
+    padding:  2px  6px;
+}
 /*** First Section **************************************************************************************************/
 .banner {
     padding: 110px 0 0 !important;
@@ -99,7 +105,7 @@ body, main {
     line-height: normal;
     letter-spacing: normal;
     text-transform: capitalize;
-    font-size: 50px;
+    font-size: 48px;
 }
 
 .banner__content p {
@@ -128,7 +134,7 @@ body, main {
     background: #896c2b;
     color: #f3fdfc;
 }
-/*** About Section **************************************************************************************************/
+/*** About Section **********************************************************************************************/
 .btn {
     margin: auto !important;
     width: 50%;
@@ -179,6 +185,7 @@ body, main {
     color:#896c2b;
     font-weight: bolder !important;
     font-size: 20px !important;
+    text-transform: capitalize !important;
 }
 
 .about__exp__content p, .about__content .desc{
@@ -226,7 +233,7 @@ body, main {
 .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
     background-color: transparent !important;
 }
-/*** About Page *****************************************************************************************************/
+/*** About Page *************************************************************************************************/
 
 .about__info__wrap .nav-tabs {
     display: flex !important;
@@ -254,6 +261,7 @@ body, main {
 
 .services__style__two__wrap {
     background-color: #dae3e2 !important;
+    /* background-color: #a8f0e9 !important; */
     border-radius: 50px;
     -webkit-border-radius: 50px;
     -moz-border-radius: 50px;
@@ -291,7 +299,7 @@ body, main {
     color: #f3fdfc;
 }
 
-/*** Services Section ***********************************************************************************************/
+/*** Services Section *******************************************************************************************/
 .service_btn {
     width: 100% !important;
     color: #f3fdfc !important;
@@ -301,7 +309,7 @@ body, main {
 }
 
 .services__content {
-    height: 900px !important;
+    height: 580px !important;
     position: relative;
 }
 
@@ -335,7 +343,7 @@ body, main {
     width: 70% !important;
 }
 
-/*** Services Page **************************************************************************************************/
+/*** Services Page **********************************************************************************************/
 
 .contact_btn {
     width: 100% !important;
@@ -421,8 +429,27 @@ body, main {
     list-style-type: disc;
     color: #210e7f;
 }
+/***End********************************************************************************************************/
+/*** Project Type Section **************************************************************************************/
 
-/*** Feedback & Question Form in Both of Services & Home Pages ******************************************************/
+.proj_type {
+    display: flex;
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+}
+
+.portfolio__nav {
+    width: 100%;
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+}
+
+.portfolio__nav .nav-item .nav-link{
+    font-size: 12px;
+    text-transform: capitalize;
+}
+
+/*** Feedback & Question Form in Both of Services & Home Pages **************************************************/
 
 .homeContact__form form input, .homeContact__form form textarea {
     background: transparent !important;
@@ -448,7 +475,205 @@ body, main {
     color: #896c2b !important;
 }
 
-/*** Footer Section *************************************************************************************************/
+/*** Methodologies Section **************************************************************************************/
+
+.work__process, .work__process .title {
+    font-family: 'Times New Roman', Times, serif !important;
+}
+.methodology, .methodologyTwo {
+    width: 100%;
+    height: 220px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.methodologyEast, .methodologyWest {
+    width: 35%;
+    height: 100%;
+}
+
+/*** Methodology East Sub-Section *******************************************************************************/
+
+.methodology_name, .webApplication_progress {
+    height: 20%;
+}
+
+.methodology_name h4, .webApplication_progress h4 {
+    color: #210e7f !important;
+}
+
+.methodology_image, .methodology_container {
+    height: 75%;
+    width: 60%;
+}
+
+/* .methodology_image {
+
+} */
+
+.methodology_imagesrc {
+    height: 100% !important;
+    width: 100%;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+/*** Methodology West Sub-Section *******************************************************************************/
+
+.methodologyWest, .methodologyEast {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.methodology_container {
+    margin-top: 70px;
+    width: 400px;
+    text-align: center;
+  }
+
+  .methodology_container .progress {
+    margin: 0 auto;
+    width: 400px;
+  }
+
+  .progress {
+    /* padding: 4px; */
+    /* background: rgba(0, 0, 0, 0.25); */
+    background-color: #210e7f !important;
+    border-radius: 6px;
+    -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.08);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.08);
+  }
+
+  .progress-bar {
+    height: 16px;
+    border-radius: 4px;
+    background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
+    background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
+    background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
+    -webkit-transition: 0.4s linear;
+    -moz-transition: 0.4s linear;
+    -o-transition: 0.4s linear;
+    transition: 0.4s linear;
+    -webkit-transition-property: width, background-color;
+    -moz-transition-property: width, background-color;
+    -o-transition-property: width, background-color;
+    transition-property: width, background-color;
+    -webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.25), inset 0 1px rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.25), inset 0 1px rgba(255, 255, 255, 0.1);
+    -ms-transition: 0.4s linear;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+
+  /*
+   * Note: using adjacent or general sibling selectors combined with
+   *       pseudo classes doesn't work in Safari 5.0 and Chrome 12.
+   *       See this article for more info and a potential fix:
+   *       https://css-tricks.com/webkit-sibling-bug/
+   */
+
+  #five:checked ~ .progress > .progress-bar {
+    width: 5%;
+    background-color: #e73007;
+  }
+
+  #twenty:checked ~ .progress > .progress-bar {
+    width: 20%;
+    background-color: #f27011;
+  }
+
+  #fourty:checked ~ .progress > .progress-bar {
+    width: 40%;
+    background-color: #f2b01e;
+  }
+
+  #sixty:checked ~ .progress > .progress-bar {
+    width: 60%;
+    background-color: red;
+  }
+
+  #eighty:checked ~ .progress > .progress-bar {
+    width: 80%;
+    background-color: #f2d31b;
+  }
+
+  #onehundred:checked ~ .progress > .progress-bar {
+    width: 100%;
+    background-color: #86e01e;
+  }
+
+  .radio {
+    display: none;
+  }
+
+  .label {
+    display: inline-block;
+    margin: 0 5px 20px;
+    padding: 3px 8px;
+    color: #210e7f;
+    text-shadow: 0 1px black;
+    cursor: pointer;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+  .radio:checked + .label {
+    color: #896c2b;
+    background: #a8f0e9;
+  }
+
+  .horiz_line {
+    background-color: #a8f0e9;
+    height: 2px;
+    width: 100%;
+  }
+
+/*** Methodology Details ****************************************************************************************/
+
+.work__process__wrap {
+    margin: auto;
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.work__process__wrap .col {
+    width: 30%;
+}
+
+.work__process__icon {
+    display: grid;
+    place-items: center;
+}
+
+.work__process__content .title {
+    display: flex;
+    justify-content: center;
+}
+
+.work__process__content p {
+    color: #484b4b;
+    text-transform: capitalize;
+    font-size: 16px !important;
+    font-weight: 400;
+}
+
+/*** End Of Methodologies Section *******************************************************************************/
+/*** Footer Section *********************************************************************************************/
 
 .footer_title {
     color: #896c2b;

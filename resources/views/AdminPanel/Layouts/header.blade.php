@@ -415,6 +415,61 @@
                                 </li>
                             </ul>
                         </li>
+                        <!-- Methodologies Menu -->
+                        <li class="nav-item has-treeview">
+                            <a href="{{ route('methodology.index') }}"
+                                class="nav-link {{ Request::segment(2) == 'methodology' ? 'active' : '' }}">
+                                <i class="fa-solid fa-users"></i>
+                                <p class="crud">
+                                    @lang('app.METHODOLOGY')
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+
+                                <li class="nav-item">
+                                    <a href="{{ route('methodology.index') }}"
+                                        class="nav-link {{ Request::segment(3) == 'methodology' ? 'active' : '' }}">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p> @lang('app.METHODOLOGY') </p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('methodologyDetail.index') }}"
+                                        class="nav-link {{ Request::segment(3) == 'methodologyDetail' ? 'active' : '' }}">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>@lang('app.METHODOLOGY') @lang('app.DETAILS') </p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- Projects Menu -->
+                        <li class="nav-item has-treeview">
+                            <a href="{{ route('projType.index') }}"
+                                class="nav-link {{ Request::segment(2) == 'projType' ? 'active' : '' }}">
+                                <i class="fa-solid fa-users"></i>
+                                <p class="crud">
+                                    @lang('app.PROJTYPE')
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ route('projType.index') }}"
+                                        class="nav-link {{ Request::segment(3) == 'projType' ? 'active' : '' }}">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>@lang('app.PROJTYPE') @lang('app.DETAILS') </p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('project.index') }}"
+                                        class="nav-link {{ Request::segment(3) == 'project' ? 'active' : '' }}">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p> @lang('app.PROJECT') </p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
                         <!-- Layout Menu -->
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">

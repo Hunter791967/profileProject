@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('frontDesign/img/favicon.png') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('frontDesign/img/banner/amr01.png') }}">
     <!-- Place favicon.ico in the root directory -->
 
     <!-- CSS here -->
@@ -43,8 +43,8 @@
                             <nav class="menu__nav">
                                 <div class="logo">
                                     <a href="index.html" class="logo__black"><img
-                                            src="{{ asset('frontDesign/img/logo/amr_logo00.png') }}"
-                                            alt=""></a>
+                                            src="{{ asset('frontDesign/img/logo/amr_logo00.png') }}" alt="My Logo"
+                                            class="logo_bruch"></a>
                                     <a href="index.html" class="logo__white"><img
                                             src="{{ asset('frontDesign/img/logo/amr_logo00.png') }}"
                                             alt=""></a>

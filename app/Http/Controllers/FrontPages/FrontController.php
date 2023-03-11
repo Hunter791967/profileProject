@@ -12,8 +12,11 @@ use App\Models\FrontPages\Contact_detail;
 use App\Models\FrontPages\Contact_icon;
 use App\Models\FrontPages\Gallery;
 use App\Models\FrontPages\Main_service;
+use App\Models\FrontPages\Methodology;
+use App\Models\FrontPages\MethodologyDetail;
 use App\Models\FrontPages\Prospect_detail;
 use App\Models\FrontPages\Skill;
+use App\Models\ProjType;
 use App\Models\Service;
 
 class FrontController extends Controller
@@ -32,6 +35,13 @@ class FrontController extends Controller
         $mainService = Main_service::all(['main_title', 'sub_title'])->first();
         $contactDetails = Contact_detail::all()->last();
         $contactIcon = Contact_icon::all();
+        $methodolgyOne = Methodology::all()->first();
+        $methodolgyTwo = Methodology::all()->last();
+        $methodologyDetail = MethodologyDetail::take(6)->get();
+        $methodologyDetailTwo = MethodologyDetail::get()->skip(6);
+        $projFirst = ProjType::all()->first();
+        $projType = ProjType::get()->skip(1);
+        // $methodologyDetailTwo = MethodologyDetail::latest('id')->limit(6)->get();;
         return view('front', get_defined_vars());
     }
 
