@@ -10,7 +10,9 @@
                 <div class="row first_section">
                     <div class="col-lg-6 order-0 order-lg-2 first_sectionWest">
                         <div class="banner__img text-center text-xxl-end">
-                            <img src="{{ asset('uploads/homeSlider/' . $showData->panner) }}" alt="">
+                            <img src="{{ asset('frontDesign/img/images/colors.png') }}" class="colors" alt="Colors">
+                            <img src="{{ asset('uploads/homeSlider/' . $showData->panner) }}" class="men"
+                                alt="My Profile Photo">
                         </div>
                     </div>
                     <div class="col-xl-5 col-lg-12 first_sectionEast">
@@ -307,8 +309,8 @@
                                         <div class="portfolio__overlay__content">
                                             <span>{{ $projFirst->name }}</span>
                                             <h4 class="title"><a
-                                                    href="portfolio-details.html">{{ $projFirst->name }}</a></h4>
-                                            <a href="portfolio-details.html" class="link">Case Study</a>
+                                                    href="{{ url('projectDetail') }}">{{ $projFirst->name }}</a></h4>
+                                            <a href="{{ url('projectDetail') }}" class="link">Case Study</a>
                                         </div>
                                     </div>
                                     @foreach ($projType as $singleType)
@@ -320,575 +322,12 @@
                                             <div class="portfolio__overlay__content">
                                                 <span>{{ $singleType->name }}</span>
                                                 <h4 class="title"><a
-                                                        href="portfolio-details.html">{{ $singleType->name }}</a></h4>
-                                                <a href="portfolio-details.html" class="link">Case Study</a>
+                                                        href="{{ url('projectDetail') }}">{{ $singleType->name }}</a>
+                                                </h4>
+                                                <a href="{{ url('projectDetail') }}" class="link">Case Study</a>
                                             </div>
                                         </div>
                                     @endforeach
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab-pane" id="website" role="tabpanel" aria-labelledby="website-tab">
-                    <div class="container">
-                        <div class="row gx-0 justify-content-center">
-                            <div class="col">
-                                <div class="portfolio__active">
-                                    <div class="portfolio__item">
-                                        <div class="portfolio__thumb">
-                                            <img src="{{ asset('frontDesign/img/portfolio/portfolio_img07.jpg') }}"
-                                                alt="">
-                                        </div>
-                                        <div class="portfolio__overlay__content">
-                                            <span>Web Development</span>
-                                            <h4 class="title"><a href="portfolio-details.html">Nature of Business
-                                                    Strategy System</a></h4>
-                                            <a href="portfolio-details.html" class="link">Case Study</a>
-                                        </div>
-                                    </div>
-                                    <div class="portfolio__item">
-                                        <div class="portfolio__thumb">
-                                            <img src="{{ asset('frontDesign/img/portfolio/portfolio_img06.jpg') }}"
-                                                alt="">
-                                        </div>
-                                        <div class="portfolio__overlay__content">
-                                            <span>Web Development</span>
-                                            <h4 class="title"><a href="portfolio-details.html">Banking Management
-                                                    System</a></h4>
-                                            <a href="portfolio-details.html" class="link">Case Study</a>
-                                        </div>
-                                    </div>
-                                    <div class="portfolio__item">
-                                        <div class="portfolio__thumb">
-                                            <img src="{{ asset('frontDesign/img/portfolio/portfolio_img01.jpg') }}"
-                                                alt="">
-                                        </div>
-                                        <div class="portfolio__overlay__content">
-                                            <span>Apps Design</span>
-                                            <h4 class="title"><a href="portfolio-details.html">Banking Management
-                                                    System</a></h4>
-                                            <a href="portfolio-details.html" class="link">Case Study</a>
-                                        </div>
-                                    </div>
-                                    <div class="portfolio__item">
-                                        <div class="portfolio__thumb">
-                                            <img src="{{ asset('frontDesign/img/portfolio/portfolio_img02.jpg') }}"
-                                                alt="">
-                                        </div>
-                                        <div class="portfolio__overlay__content">
-                                            <span>Web Design</span>
-                                            <h4 class="title"><a href="portfolio-details.html">Banking Management
-                                                    System</a></h4>
-                                            <a href="portfolio-details.html" class="link">Case Study</a>
-                                        </div>
-                                    </div>
-                                    <div class="portfolio__item">
-                                        <div class="portfolio__thumb">
-                                            <img src="{{ asset('frontDesign/img/portfolio/portfolio_img03.jpg') }}"
-                                                alt="">
-                                        </div>
-                                        <div class="portfolio__overlay__content">
-                                            <span>UX/UI Design</span>
-                                            <h4 class="title"><a href="portfolio-details.html">Banking Management
-                                                    System</a></h4>
-                                            <a href="portfolio-details.html" class="link">Case Study</a>
-                                        </div>
-                                    </div>
-                                    <div class="portfolio__item">
-                                        <div class="portfolio__thumb">
-                                            <img src="{{ asset('frontDesign/img/portfolio/portfolio_img04.jpg') }}"
-                                                alt="">
-                                        </div>
-                                        <div class="portfolio__overlay__content">
-                                            <span>Web Development</span>
-                                            <h4 class="title"><a href="portfolio-details.html">Banking Management
-                                                    System</a></h4>
-                                            <a href="portfolio-details.html" class="link">Case Study</a>
-                                        </div>
-                                    </div>
-                                    <div class="portfolio__item">
-                                        <div class="portfolio__thumb">
-                                            <img src="{{ asset('frontDesign/img/portfolio/portfolio_img05.jpg') }}"
-                                                alt="">
-                                        </div>
-                                        <div class="portfolio__overlay__content">
-                                            <span>Web Development</span>
-                                            <h4 class="title"><a href="portfolio-details.html">Banking Management
-                                                    System</a></h4>
-                                            <a href="portfolio-details.html" class="link">Case Study</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab-pane" id="apps" role="tabpanel" aria-labelledby="apps-tab">
-                    <div class="container">
-                        <div class="row gx-0 justify-content-center">
-                            <div class="col">
-                                <div class="portfolio__active">
-                                    <div class="portfolio__item">
-                                        <div class="portfolio__thumb">
-                                            <img src="{{ asset('frontDesign/img/portfolio/portfolio_img06.jpg') }}"
-                                                alt="">
-                                        </div>
-                                        <div class="portfolio__overlay__content">
-                                            <span>Web Development</span>
-                                            <h4 class="title"><a href="portfolio-details.html">Product Design and
-                                                    Development</a></h4>
-                                            <a href="portfolio-details.html" class="link">Case Study</a>
-                                        </div>
-                                    </div>
-                                    <div class="portfolio__item">
-                                        <div class="portfolio__thumb">
-                                            <img src="{{ asset('frontDesign/img/portfolio/portfolio_img01.jpg') }}"
-                                                alt="">
-                                        </div>
-                                        <div class="portfolio__overlay__content">
-                                            <span>Apps Design</span>
-                                            <h4 class="title"><a href="portfolio-details.html">Banking Management
-                                                    System</a></h4>
-                                            <a href="portfolio-details.html" class="link">Case Study</a>
-                                        </div>
-                                    </div>
-                                    <div class="portfolio__item">
-                                        <div class="portfolio__thumb">
-                                            <img src="{{ asset('frontDesign/img/portfolio/portfolio_img02.jpg') }}"
-                                                alt="">
-                                        </div>
-                                        <div class="portfolio__overlay__content">
-                                            <span>Web Design</span>
-                                            <h4 class="title"><a href="portfolio-details.html">Banking Management
-                                                    System</a></h4>
-                                            <a href="portfolio-details.html" class="link">Case Study</a>
-                                        </div>
-                                    </div>
-                                    <div class="portfolio__item">
-                                        <div class="portfolio__thumb">
-                                            <img src="{{ asset('frontDesign/img/portfolio/portfolio_img03.jpg') }}"
-                                                alt="">
-                                        </div>
-                                        <div class="portfolio__overlay__content">
-                                            <span>UX/UI Design</span>
-                                            <h4 class="title"><a href="portfolio-details.html">Banking Management
-                                                    System</a></h4>
-                                            <a href="portfolio-details.html" class="link">Case Study</a>
-                                        </div>
-                                    </div>
-                                    <div class="portfolio__item">
-                                        <div class="portfolio__thumb">
-                                            <img src="{{ asset('frontDesign/img/portfolio/portfolio_img04.jpg') }}"
-                                                alt="">
-                                        </div>
-                                        <div class="portfolio__overlay__content">
-                                            <span>Web Development</span>
-                                            <h4 class="title"><a href="portfolio-details.html">Banking Management
-                                                    System</a></h4>
-                                            <a href="portfolio-details.html" class="link">Case Study</a>
-                                        </div>
-                                    </div>
-                                    <div class="portfolio__item">
-                                        <div class="portfolio__thumb">
-                                            <img src="{{ asset('frontDesign/img/portfolio/portfolio_img05.jpg') }}"
-                                                alt="">
-                                        </div>
-                                        <div class="portfolio__overlay__content">
-                                            <span>Web Development</span>
-                                            <h4 class="title"><a href="portfolio-details.html">Banking Management
-                                                    System</a></h4>
-                                            <a href="portfolio-details.html" class="link">Case Study</a>
-                                        </div>
-                                    </div>
-                                    <div class="portfolio__item">
-                                        <div class="portfolio__thumb">
-                                            <img src="{{ asset('frontDesign/img/portfolio/portfolio_img07.jpg') }}"
-                                                alt="">
-                                        </div>
-                                        <div class="portfolio__overlay__content">
-                                            <span>Web Development</span>
-                                            <h4 class="title"><a href="portfolio-details.html">Banking Management
-                                                    System</a></h4>
-                                            <a href="portfolio-details.html" class="link">Case Study</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab-pane" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
-                    <div class="container">
-                        <div class="row gx-0 justify-content-center">
-                            <div class="col">
-                                <div class="portfolio__active">
-                                    <div class="portfolio__item">
-                                        <div class="portfolio__thumb">
-                                            <img src="{{ asset('frontDesign/img/portfolio/portfolio_img05.jpg') }}"
-                                                alt="">
-                                        </div>
-                                        <div class="portfolio__overlay__content">
-                                            <span>Web Development</span>
-                                            <h4 class="title"><a href="portfolio-details.html">Brand strategy System
-                                                    Management</a></h4>
-                                            <a href="portfolio-details.html" class="link">Case Study</a>
-                                        </div>
-                                    </div>
-                                    <div class="portfolio__item">
-                                        <div class="portfolio__thumb">
-                                            <img src="{{ asset('frontDesign/img/portfolio/portfolio_img01.jpg') }}"
-                                                alt="">
-                                        </div>
-                                        <div class="portfolio__overlay__content">
-                                            <span>Apps Design</span>
-                                            <h4 class="title"><a href="portfolio-details.html">Banking Management
-                                                    System</a></h4>
-                                            <a href="portfolio-details.html" class="link">Case Study</a>
-                                        </div>
-                                    </div>
-                                    <div class="portfolio__item">
-                                        <div class="portfolio__thumb">
-                                            <img src="{{ asset('frontDesign/img/portfolio/portfolio_img02.jpg') }}"
-                                                alt="">
-                                        </div>
-                                        <div class="portfolio__overlay__content">
-                                            <span>Web Design</span>
-                                            <h4 class="title"><a href="portfolio-details.html">Banking Management
-                                                    System</a></h4>
-                                            <a href="portfolio-details.html" class="link">Case Study</a>
-                                        </div>
-                                    </div>
-                                    <div class="portfolio__item">
-                                        <div class="portfolio__thumb">
-                                            <img src="{{ asset('frontDesign/img/portfolio/portfolio_img03.jpg') }}"
-                                                alt="">
-                                        </div>
-                                        <div class="portfolio__overlay__content">
-                                            <span>UX/UI Design</span>
-                                            <h4 class="title"><a href="portfolio-details.html">Banking Management
-                                                    System</a></h4>
-                                            <a href="portfolio-details.html" class="link">Case Study</a>
-                                        </div>
-                                    </div>
-                                    <div class="portfolio__item">
-                                        <div class="portfolio__thumb">
-                                            <img src="{{ asset('frontDesign/img/portfolio/portfolio_img04.jpg') }}"
-                                                alt="">
-                                        </div>
-                                        <div class="portfolio__overlay__content">
-                                            <span>Web Development</span>
-                                            <h4 class="title"><a href="portfolio-details.html">Banking Management
-                                                    System</a></h4>
-                                            <a href="portfolio-details.html" class="link">Case Study</a>
-                                        </div>
-                                    </div>
-                                    <div class="portfolio__item">
-                                        <div class="portfolio__thumb">
-                                            <img src="{{ asset('frontDesign/img/portfolio/portfolio_img06.jpg') }}"
-                                                alt="">
-                                        </div>
-                                        <div class="portfolio__overlay__content">
-                                            <span>Web Development</span>
-                                            <h4 class="title"><a href="portfolio-details.html">Banking Management
-                                                    System</a></h4>
-                                            <a href="portfolio-details.html" class="link">Case Study</a>
-                                        </div>
-                                    </div>
-                                    <div class="portfolio__item">
-                                        <div class="portfolio__thumb">
-                                            <img src="{{ asset('frontDesign/img/portfolio/portfolio_img07.jpg') }}"
-                                                alt="">
-                                        </div>
-                                        <div class="portfolio__overlay__content">
-                                            <span>Web Development</span>
-                                            <h4 class="title"><a href="portfolio-details.html">Banking Management
-                                                    System</a></h4>
-                                            <a href="portfolio-details.html" class="link">Case Study</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab-pane" id="landing" role="tabpanel" aria-labelledby="landing-tab">
-                    <div class="container">
-                        <div class="row gx-0 justify-content-center">
-                            <div class="col">
-                                <div class="portfolio__active">
-                                    <div class="portfolio__item">
-                                        <div class="portfolio__thumb">
-                                            <img src="{{ asset('frontDesign/img/portfolio/portfolio_img04.jpg') }}"
-                                                alt="">
-                                        </div>
-                                        <div class="portfolio__overlay__content">
-                                            <span>Web Development</span>
-                                            <h4 class="title"><a href="portfolio-details.html">Visual Design System
-                                                    Management</a></h4>
-                                            <a href="portfolio-details.html" class="link">Case Study</a>
-                                        </div>
-                                    </div>
-                                    <div class="portfolio__item">
-                                        <div class="portfolio__thumb">
-                                            <img src="{{ asset('frontDesign/img/portfolio/portfolio_img01.jpg') }}"
-                                                alt="">
-                                        </div>
-                                        <div class="portfolio__overlay__content">
-                                            <span>Apps Design</span>
-                                            <h4 class="title"><a href="portfolio-details.html">Banking Management
-                                                    System</a></h4>
-                                            <a href="portfolio-details.html" class="link">Case Study</a>
-                                        </div>
-                                    </div>
-                                    <div class="portfolio__item">
-                                        <div class="portfolio__thumb">
-                                            <img src="{{ asset('frontDesign/img/portfolio/portfolio_img02.jpg') }}"
-                                                alt="">
-                                        </div>
-                                        <div class="portfolio__overlay__content">
-                                            <span>Web Design</span>
-                                            <h4 class="title"><a href="portfolio-details.html">Banking Management
-                                                    System</a></h4>
-                                            <a href="portfolio-details.html" class="link">Case Study</a>
-                                        </div>
-                                    </div>
-                                    <div class="portfolio__item">
-                                        <div class="portfolio__thumb">
-                                            <img src="{{ asset('frontDesign/img/portfolio/portfolio_img03.jpg') }}"
-                                                alt="">
-                                        </div>
-                                        <div class="portfolio__overlay__content">
-                                            <span>UX/UI Design</span>
-                                            <h4 class="title"><a href="portfolio-details.html">Banking Management
-                                                    System</a></h4>
-                                            <a href="portfolio-details.html" class="link">Case Study</a>
-                                        </div>
-                                    </div>
-                                    <div class="portfolio__item">
-                                        <div class="portfolio__thumb">
-                                            <img src="{{ asset('frontDesign/img/portfolio/portfolio_img05.jpg') }}"
-                                                alt="">
-                                        </div>
-                                        <div class="portfolio__overlay__content">
-                                            <span>Web Development</span>
-                                            <h4 class="title"><a href="portfolio-details.html">Banking Management
-                                                    System</a></h4>
-                                            <a href="portfolio-details.html" class="link">Case Study</a>
-                                        </div>
-                                    </div>
-                                    <div class="portfolio__item">
-                                        <div class="portfolio__thumb">
-                                            <img src="{{ asset('frontDesign/img/portfolio/portfolio_img06.jpg') }}"
-                                                alt="">
-                                        </div>
-                                        <div class="portfolio__overlay__content">
-                                            <span>Web Development</span>
-                                            <h4 class="title"><a href="portfolio-details.html">Banking Management
-                                                    System</a></h4>
-                                            <a href="portfolio-details.html" class="link">Case Study</a>
-                                        </div>
-                                    </div>
-                                    <div class="portfolio__item">
-                                        <div class="portfolio__thumb">
-                                            <img src="{{ asset('frontDesign/img/portfolio/portfolio_img07.jpg') }}"
-                                                alt="">
-                                        </div>
-                                        <div class="portfolio__overlay__content">
-                                            <span>Web Development</span>
-                                            <h4 class="title"><a href="portfolio-details.html">Banking Management
-                                                    System</a></h4>
-                                            <a href="portfolio-details.html" class="link">Case Study</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab-pane" id="branding" role="tabpanel" aria-labelledby="branding-tab">
-                    <div class="container">
-                        <div class="row gx-0 justify-content-center">
-                            <div class="col">
-                                <div class="portfolio__active">
-                                    <div class="portfolio__item">
-                                        <div class="portfolio__thumb">
-                                            <img src="{{ asset('frontDesign/img/portfolio/portfolio_img03.jpg') }}"
-                                                alt="">
-                                        </div>
-                                        <div class="portfolio__overlay__content">
-                                            <span>UX/UI Design</span>
-                                            <h4 class="title"><a href="portfolio-details.html">Animation Management
-                                                    System</a></h4>
-                                            <a href="portfolio-details.html" class="link">Case Study</a>
-                                        </div>
-                                    </div>
-                                    <div class="portfolio__item">
-                                        <div class="portfolio__thumb">
-                                            <img src="{{ asset('frontDesign/img/portfolio/portfolio_img01.jpg') }}"
-                                                alt="">
-                                        </div>
-                                        <div class="portfolio__overlay__content">
-                                            <span>Apps Design</span>
-                                            <h4 class="title"><a href="portfolio-details.html">Banking Management
-                                                    System</a></h4>
-                                            <a href="portfolio-details.html" class="link">Case Study</a>
-                                        </div>
-                                    </div>
-                                    <div class="portfolio__item">
-                                        <div class="portfolio__thumb">
-                                            <img src="{{ asset('frontDesign/img/portfolio/portfolio_img02.jpg') }}"
-                                                alt="">
-                                        </div>
-                                        <div class="portfolio__overlay__content">
-                                            <span>Web Design</span>
-                                            <h4 class="title"><a href="portfolio-details.html">Banking Management
-                                                    System</a></h4>
-                                            <a href="portfolio-details.html" class="link">Case Study</a>
-                                        </div>
-                                    </div>
-                                    <div class="portfolio__item">
-                                        <div class="portfolio__thumb">
-                                            <img src="{{ asset('frontDesign/img/portfolio/portfolio_img04.jpg') }}"
-                                                alt="">
-                                        </div>
-                                        <div class="portfolio__overlay__content">
-                                            <span>Web Development</span>
-                                            <h4 class="title"><a href="portfolio-details.html">Banking Management
-                                                    System</a></h4>
-                                            <a href="portfolio-details.html" class="link">Case Study</a>
-                                        </div>
-                                    </div>
-                                    <div class="portfolio__item">
-                                        <div class="portfolio__thumb">
-                                            <img src="{{ asset('frontDesign/img/portfolio/portfolio_img05.jpg') }}"
-                                                alt="">
-                                        </div>
-                                        <div class="portfolio__overlay__content">
-                                            <span>Web Development</span>
-                                            <h4 class="title"><a href="portfolio-details.html">Banking Management
-                                                    System</a></h4>
-                                            <a href="portfolio-details.html" class="link">Case Study</a>
-                                        </div>
-                                    </div>
-                                    <div class="portfolio__item">
-                                        <div class="portfolio__thumb">
-                                            <img src="{{ asset('frontDesign/img/portfolio/portfolio_img06.jpg') }}"
-                                                alt="">
-                                        </div>
-                                        <div class="portfolio__overlay__content">
-                                            <span>Web Development</span>
-                                            <h4 class="title"><a href="portfolio-details.html">Banking Management
-                                                    System</a></h4>
-                                            <a href="portfolio-details.html" class="link">Case Study</a>
-                                        </div>
-                                    </div>
-                                    <div class="portfolio__item">
-                                        <div class="portfolio__thumb">
-                                            <img src="{{ asset('frontDesign/img/portfolio/portfolio_img07.jpg') }}"
-                                                alt="">
-                                        </div>
-                                        <div class="portfolio__overlay__content">
-                                            <span>Web Development</span>
-                                            <h4 class="title"><a href="portfolio-details.html">Banking Management
-                                                    System</a></h4>
-                                            <a href="portfolio-details.html" class="link">Case Study</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab-pane" id="graphic" role="tabpanel" aria-labelledby="graphic-tab">
-                    <div class="container">
-                        <div class="row gx-0 justify-content-center">
-                            <div class="col">
-                                <div class="portfolio__active">
-                                    <div class="portfolio__item">
-                                        <div class="portfolio__thumb">
-                                            <img src="{{ asset('frontDesign/img/portfolio/portfolio_img02.jpg') }}"
-                                                alt="">
-                                        </div>
-                                        <div class="portfolio__overlay__content">
-                                            <span>Web Design</span>
-                                            <h4 class="title"><a href="portfolio-details.html">Graphic Design Management
-                                                    System</a></h4>
-                                            <a href="portfolio-details.html" class="link">Case Study</a>
-                                        </div>
-                                    </div>
-                                    <div class="portfolio__item">
-                                        <div class="portfolio__thumb">
-                                            <img src="{{ asset('frontDesign/img/portfolio/portfolio_img01.jpg') }}"
-                                                alt="">
-                                        </div>
-                                        <div class="portfolio__overlay__content">
-                                            <span>Apps Design</span>
-                                            <h4 class="title"><a href="portfolio-details.html">Banking Management
-                                                    System</a></h4>
-                                            <a href="portfolio-details.html" class="link">Case Study</a>
-                                        </div>
-                                    </div>
-                                    <div class="portfolio__item">
-                                        <div class="portfolio__thumb">
-                                            <img src="{{ asset('frontDesign/img/portfolio/portfolio_img03.jpg') }}"
-                                                alt="">
-                                        </div>
-                                        <div class="portfolio__overlay__content">
-                                            <span>UX/UI Design</span>
-                                            <h4 class="title"><a href="portfolio-details.html">Banking Management
-                                                    System</a></h4>
-                                            <a href="portfolio-details.html" class="link">Case Study</a>
-                                        </div>
-                                    </div>
-                                    <div class="portfolio__item">
-                                        <div class="portfolio__thumb">
-                                            <img src="{{ asset('frontDesign/img/portfolio/portfolio_img04.jpg') }}"
-                                                alt="">
-                                        </div>
-                                        <div class="portfolio__overlay__content">
-                                            <span>Web Development</span>
-                                            <h4 class="title"><a href="portfolio-details.html">Banking Management
-                                                    System</a></h4>
-                                            <a href="portfolio-details.html" class="link">Case Study</a>
-                                        </div>
-                                    </div>
-                                    <div class="portfolio__item">
-                                        <div class="portfolio__thumb">
-                                            <img src="{{ asset('frontDesign/img/portfolio/portfolio_img05.jpg') }}"
-                                                alt="">
-                                        </div>
-                                        <div class="portfolio__overlay__content">
-                                            <span>Web Development</span>
-                                            <h4 class="title"><a href="portfolio-details.html">Banking Management
-                                                    System</a></h4>
-                                            <a href="portfolio-details.html" class="link">Case Study</a>
-                                        </div>
-                                    </div>
-                                    <div class="portfolio__item">
-                                        <div class="portfolio__thumb">
-                                            <img src="{{ asset('frontDesign/img/portfolio/portfolio_img06.jpg') }}"
-                                                alt="">
-                                        </div>
-                                        <div class="portfolio__overlay__content">
-                                            <span>Web Development</span>
-                                            <h4 class="title"><a href="portfolio-details.html">Banking Management
-                                                    System</a></h4>
-                                            <a href="portfolio-details.html" class="link">Case Study</a>
-                                        </div>
-                                    </div>
-                                    <div class="portfolio__item">
-                                        <div class="portfolio__thumb">
-                                            <img src="{{ asset('frontDesign/img/portfolio/portfolio_img07.jpg') }}"
-                                                alt="">
-                                        </div>
-                                        <div class="portfolio__overlay__content">
-                                            <span>Web Development</span>
-                                            <h4 class="title"><a href="portfolio-details.html">Banking Management
-                                                    System</a></h4>
-                                            <a href="portfolio-details.html" class="link">Case Study</a>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -899,7 +338,7 @@
         <!-- portfolio-area-end -->
 
         <!-- partner-area -->
-        <section class="partner">
+        {{-- <section class="partner">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-6">
@@ -956,11 +395,11 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> --}}
         <!-- partner-area-end -->
 
         <!-- testimonial-area -->
-        <section class="testimonial">
+        {{-- <section class="testimonial">
             <div class="container">
                 <div class="row align-items-center justify-content-between">
                     <div class="col-lg-6 order-0 order-lg-2">
@@ -1015,11 +454,11 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> --}}
         <!-- testimonial-area-end -->
 
         <!-- blog-area -->
-        <section class="blog">
+        {{-- <section class="blog">
             <div class="container">
                 <div class="row gx-0 justify-content-center">
                     <div class="col-lg-4 col-md-6 col-sm-9">
@@ -1083,7 +522,7 @@
                     <a href="blog.html" class="btn">more blog</a>
                 </div>
             </div>
-        </section>
+        </section> --}}
         <!-- blog-area-end -->
 
         <!-- contact-area -->

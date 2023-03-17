@@ -2,6 +2,7 @@
 
 body, main {
     background-color: #f3fdfc !important;
+    max-width: 100% !important;
 }
 
 .scroll-top {
@@ -70,7 +71,7 @@ body, main {
     margin: -2px -6px;
     padding:  2px  6px;
 }
-/*** First Section **************************************************************************************************/
+/*** First Section **********************************************************************************************/
 .banner {
     padding: 110px 0 0 !important;
 }
@@ -78,6 +79,7 @@ body, main {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    width: 100% !important;
     height: 577px;
 }
 .first_sectionWest {
@@ -88,8 +90,71 @@ body, main {
     width: 55% !important;
     height: 75%;
 }
-.banner__img img {
+
+.banner__img {
+    height: 100% !important;
+    position: relative;
+}
+
+.banner__img .colors {
+    width: 100% !important;
+    position: absolute;
+    right: -30px;
+    top: 50px;
+    animation: animateColor 8s ease-in-out infinite;
+    -webkit-animation: animateColor 8s ease-in-out infinite;
+}
+
+@keyframes animateColor
+{
+    0%, 100%
+    {
+        transform: translateY(0px);
+        -webkit-transform: translateY(0px);
+        -moz-transform: translateY(0px);
+        -ms-transform: translateY(0px);
+        -o-transform: translateY(0px);
+    }
+    50%
+    {
+        transform: translateY(50px);
+        -webkit-transform: translateY(50px);
+        -moz-transform: translateY(50px);
+        -ms-transform: translateY(50px);
+        -o-transform: translateY(50px);
+}
+
+}
+
+.banner__img .men {
     max-width: 100% !important;
+    position: absolute;
+    right: 0;
+    bottom: 120px;
+    height: 80%;
+    animation: animateMen 8s ease-in-out infinite;
+    -webkit-animation: animateMen 8s ease-in-out infinite;
+}
+
+@keyframes animateMen
+{
+    0%, 100%
+    {
+        transform: translateX(0px);
+        -webkit-transform: translateX(0px);
+        -moz-transform: translateX(0px);
+        -ms-transform: translateX(0px);
+        -o-transform: translateX(0px);
+}
+    50%
+    {
+        transform: translateX(-50px);
+        -webkit-transform: translateX(-50px);
+        -moz-transform: translateX(-50px);
+        -ms-transform: translateX(-50px);
+        -o-transform: translateX(-50px);
+}
+
 }
 
 .banner__content {
@@ -432,6 +497,10 @@ body, main {
 /***End********************************************************************************************************/
 /*** Project Type Section **************************************************************************************/
 
+.portfolio {
+    padding: 75px 0 330px !important;
+}
+
 .proj_type {
     display: flex;
     flex-wrap: nowrap !important;
@@ -447,6 +516,60 @@ body, main {
 .portfolio__nav .nav-item .nav-link{
     font-size: 12px;
     text-transform: capitalize;
+}
+
+.portfolio__thumb img {
+    border-radius: 90px;
+    -webkit-border-radius: 90px;
+    -moz-border-radius: 90px;
+    -ms-border-radius: 90px;
+    -o-border-radius: 90px;
+}
+
+.portfolio__overlay__content .title a {
+    color: #210e7f !important;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.portfolio__overlay__content .link {
+    color: #896c2b !important;
+}
+
+/*** Project Type Page ******************************************************************************************/
+
+.breadcrumb__wrap__icon ul li img {
+    width: 100%;
+    object-fit: contain !important;
+}
+
+.portfolio__inner__content .link {
+    color: #896c2b;
+}
+
+.portfolio__inner__content .link:hover {
+    color: #210e7f;
+}
+
+.portfolio__inner__content .title a {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.homeContact {
+    margin-top: 300px;
+}
+
+/*** Project Detail Page ****************************************************************************************/
+.services__sidebar .sidebar__contact__info li a {
+    color: #896c2b !important;
+}
+
+.services__sidebar .med_widget {
+    margin-bottom: 0px;
+}
+
+.services__details__img {
+    display: flex;
+    justify-content: space-around;
 }
 
 /*** Feedback & Question Form in Both of Services & Home Pages **************************************************/

@@ -65,6 +65,8 @@ Route::group(
         Route::get('/frontPages', [FrontController::class, 'front']);
         Route::get('/about', [FrontController::class, 'about']);
         Route::get('/services', [FrontController::class, 'service']);
+        Route::get('/proj', [FrontController::class, 'project']);
+        Route::get('/projectDetail/{id?}', [FrontController::class, 'projectDetail'])->name('projectDetail.projectDetail');
         Route::post('/front/{id?}', [FrontController::class, 'store'])->name('front.store');
 
         Route::resources([

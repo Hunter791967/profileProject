@@ -16,6 +16,7 @@ use App\Models\FrontPages\Methodology;
 use App\Models\FrontPages\MethodologyDetail;
 use App\Models\FrontPages\Prospect_detail;
 use App\Models\FrontPages\Skill;
+use App\Models\Project;
 use App\Models\ProjType;
 use App\Models\Service;
 
@@ -89,5 +90,32 @@ class FrontController extends Controller
 
         toast('New Prospect_Details Has Been Submitted Successfully!', 'success');
         return redirect()->back();
+    }
+
+    public function project()
+    {
+        $contactDetails = Contact_detail::all()->last();
+        $contactIcon = Contact_icon::all();
+        $mainService = Main_service::all()->first();
+        $methodologyDetail = MethodologyDetail::take(9)->get()->skip(3);
+        // $projType = ProjType::with('projects.proj_types:name,id,image')->get();
+        $projType = ProjType::get();
+        return view('projects', get_defined_vars());
+    }
+
+    public function projectDetail(ProjType $projType)
+    {
+        $contactDetails = Contact_detail::all()->last();
+        $contactIcon = Contact_icon::all();
+        $mainService = Main_service::all()->first();
+        $methodologyDetail = MethodologyDetail::take(8)->get()->skip(2);
+        // $project = Project::all()->first();
+        $project = Project::get();
+
+        $imageFirst = Methodology::all(['image'])->first();
+        $imageLast = Methodology::all(['image'])->last();
+        // $project = $projType->projects();
+        // dd($project);
+        return view('projectDetails', get_defined_vars());
     }
 }

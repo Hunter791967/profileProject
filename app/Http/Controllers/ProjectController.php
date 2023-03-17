@@ -53,7 +53,7 @@ class ProjectController extends Controller
         if ($request->file('image')) {
             $projectImage = uniqid() . 'Image' . '.' . $request->file('image')->extension();
 
-            Image::make($request->file('image'))->resize(648, 620)->save(public_path('uploads/projects/' . $projectImage));
+            Image::make($request->file('image'))->resize(850, 430)->save(public_path('uploads/projects/' . $projectImage));
             // dd($projectImage);
             // Project::insert([
             //     'image' => $projectImage,
@@ -129,7 +129,7 @@ class ProjectController extends Controller
 
             $projectImage = uniqid() . 'Image' . '.' . $request->file('image')->extension();
 
-            Image::make($request->file('image'))->resize(1020, 520)->save(public_path('uploads/projects/' . $projectImage));
+            Image::make($request->file('image'))->resize(850, 430)->save(public_path('uploads/projects/' . $projectImage));
         }
 
         $project->update([

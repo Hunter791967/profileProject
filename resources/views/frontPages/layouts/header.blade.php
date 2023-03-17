@@ -58,11 +58,11 @@
                                         <li><a class="nav_color" href="{{ url('services') }}">Profissional Services</a>
                                         </li>
                                         <li class="menu-item-has-children"><a class="nav_color"
-                                                href="#">Experience</a>
-                                            <ul class="sub-menu">
+                                                href="{{ url('proj') }}">Experience</a>
+                                            {{-- <ul class="sub-menu">
                                                 <li><a class="nav_color" href="portfolio.html">Portfolio</a></li>
                                                 <li><a href="portfolio-details.html">Portfolio Details</a></li>
-                                            </ul>
+                                            </ul> --}}
                                         </li>
                                         {{-- <li class="menu-item-has-children"><a class="nav_color" href="#">Our
                                                 Blog</a>
