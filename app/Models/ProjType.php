@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class ProjType extends Model
 {
     use HasFactory;
-
+    protected $table = 'proj_types';
     protected $fillable = [
         'name',
         'image',

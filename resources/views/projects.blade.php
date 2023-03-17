@@ -70,7 +70,7 @@
                                             hidden in the middle of text</p> --}}
                                         {{-- <a href="{{ url('projectDetail') }}" class="link">View Case Study</a> --}}
 
-                                        <a href="{{ route('projectDetail.projectDetail', ['projectDetail' => $singleType->id]) }}"
+                                        <a href="{{ route('projectDetail.projectDetail', ['myprojectid' => $singleType->id]) }}"
                                             class="link">View Case Study</a>
                                     </div>
                                 </div>
@@ -137,7 +137,7 @@
     <!-- main-area-end -->
 @endsection
 
-@section('page_title', 'My Profile')
+@section('page_title', 'EXPERIENCE')
 
 @section('page_style')
     <link rel="stylesheet" href="{{ asset('first/styles/frontHome.css') }}">

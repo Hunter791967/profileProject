@@ -1564,7 +1564,7 @@ label {
 
 .navbar__wrap {
   display: flex;
-  flex-grow: 1; }
+  flex-grow: .95; }
   .navbar__wrap ul {
     display: flex;
     flex-direction: row;
@@ -2229,10 +2229,10 @@ Breadcrumb
 
 .about {
   position: relative;
-  padding: 180px 0 0; }
+  padding: 0px 0 0; }
   @media (max-width: 991.98px) {
     .about {
-      padding: 170px 0 120px; } }
+      padding: 10px 0 120px; } }
   .about::before {
     content: "";
     position: absolute;
@@ -2672,9 +2672,9 @@ Breadcrumb
       border-radius: 0;
       overflow: visible;
       position: relative; }
-      .about__skill__item .progress .progress-bar {
+      .about__skill__item .progress .progress-barOne {
         background: #896c2b; }
-        .about__skill__item .progress .progress-bar .percentage {
+        .about__skill__item .progress .progress-barOne .percentage {
           line-height: 1;
           color: #210e7f;
           font-size: 14px;

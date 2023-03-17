@@ -98,7 +98,7 @@
                                                     <div class="about__skill__item">
                                                         <h5 class="title">{{ $singleSkill->name }}</h5>
                                                         <div class="progress">
-                                                            <div class="progress-bar" role="progressbar"
+                                                            <div class="progress-barOne" role="progressbar"
                                                                 style="width: {{ $singleSkill->skill_rate }}%;"
                                                                 aria-valuenow="{{ $singleSkill->skill_rate }}"
                                                                 aria-valuemin="0" aria-valuemax="100">
@@ -177,7 +177,9 @@
                                     <div class="services__style__two__content">
                                         <h3 class="title"><a href="services-details.html">{{ $singleData->name }}</a>
                                         </h3>
-                                        <div class="servicesTwo_tab">{!! $singleData->service_tab !!}</div>
+                                        <div class="servicesTwo_tab">
+                                            {!! Str::limit($singleData->service_tab, 400) !!}
+                                        </div>
                                         <div class="serviceBtn_flex">
                                             <a href="{{ url('services') }}" class="services__btn"><i
                                                     class="far fa-long-arrow-right"></i></a>
@@ -296,7 +298,7 @@
         <!-- services-area-end -->
 
         <!-- testimonial-area -->
-        <section class="testimonial testimonial__style__two">
+        {{-- <section class="testimonial testimonial__style__two">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-xl-9 col-lg-11">
@@ -358,11 +360,11 @@
                     <li><img src="{{ asset('frontDesign/img/icons/testi_shape06.png') }}" alt=""></li>
                 </ul>
             </div>
-        </section>
+        </section> --}}
         <!-- testimonial-area-end -->
 
         <!-- blog-area -->
-        <section class="blog blog__style__two">
+        {{-- <section class="blog blog__style__two">
             <div class="container">
                 <div class="row gx-0 justify-content-center">
                     <div class="col-lg-4 col-md-6 col-sm-9">
@@ -424,7 +426,7 @@
                     <a href="blog.html" class="btn">more blog</a>
                 </div>
             </div>
-        </section>
+        </section> --}}
         <!-- blog-area-end -->
 
         <!-- contact-area -->

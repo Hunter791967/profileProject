@@ -103,19 +103,24 @@ class FrontController extends Controller
         return view('projects', get_defined_vars());
     }
 
-    public function projectDetail(ProjType $projType)
+    public function projectDetail($myprojectid)
     {
+
         $contactDetails = Contact_detail::all()->last();
         $contactIcon = Contact_icon::all();
         $mainService = Main_service::all()->first();
         $methodologyDetail = MethodologyDetail::take(8)->get()->skip(2);
-        // $project = Project::all()->first();
-        $project = Project::get();
-
         $imageFirst = Methodology::all(['image'])->first();
         $imageLast = Methodology::all(['image'])->last();
-        // $project = $projType->projects();
+        // Get the project type by id
+        $projectType = ProjType::findOrFail($myprojectid);
+        // dd($projectType);
+        // // Get the related projects for the project type
+        $project = Project::whereHas('proj_types', function ($query) use ($myprojectid) {
+            $query->where('proj_type_id', $myprojectid);
+        })->get()->random();
         // dd($project);
+        // $project = Project::get()->first();
         return view('projectDetails', get_defined_vars());
     }
 }

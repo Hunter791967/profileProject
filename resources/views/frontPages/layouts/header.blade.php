@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('frontDesign/img/banner/amr01.png') }}">
+    <link rel="shortcut icon" type="image/png" href="{{ asset('frontDesign/img/banner/amr01.png') }}">
     <!-- Place favicon.ico in the root directory -->
 
     <!-- CSS here -->
@@ -64,14 +64,6 @@
                                                 <li><a href="portfolio-details.html">Portfolio Details</a></li>
                                             </ul> --}}
                                         </li>
-                                        {{-- <li class="menu-item-has-children"><a class="nav_color" href="#">Our
-                                                Blog</a>
-                                            <ul class="sub-menu">
-                                                <li><a href="blog.html">Our News</a></li>
-                                                <li><a href="blog-details.html">News Details</a></li>
-                                            </ul>
-                                        </li> --}}
-                                        <li><a class="nav_color" href="contact.html">details</a></li>
                                     </ul>
                                 </div>
                                 <div class="header__btn d-none d-md-block log_main">

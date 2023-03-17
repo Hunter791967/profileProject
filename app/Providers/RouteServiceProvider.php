@@ -47,7 +47,6 @@ class RouteServiceProvider extends ServiceProvider
             Route::model('About', About::class);
             Route::model('service', Service::class);
             Route::model('about', FrontController::class);
-            Route::model('projType', ProjType::class);
         });
     }
 
