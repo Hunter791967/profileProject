@@ -50,14 +50,16 @@
                                             alt=""></a>
                                 </div>
                                 <div class="navbar__wrap main__menu d-none d-xl-flex">
-                                    <ul class="navigation">
-                                        <li class="active"><a class="nav_color" href="{{ url('frontPages') }}">Home</a>
+                                    <ul class="navigation men_nav">
+                                        <li class="active common"><a class="nav_color"
+                                                href="{{ url('frontPages') }}">Home</a>
                                         </li>
-                                        <li><a class="nav_color" href="{{ url('about') }}">Info
+                                        <li class="common"><a class="nav_color" href="{{ url('about') }}">Info
                                                 About</a></li>
-                                        <li><a class="nav_color" href="{{ url('services') }}">Profissional Services</a>
+                                        <li class="common"><a class="nav_color"
+                                                href="{{ url('services') }}">Profissional Services</a>
                                         </li>
-                                        <li class="menu-item-has-children"><a class="nav_color"
+                                        <li class="menu-item-has-children common"><a class="nav_color"
                                                 href="{{ url('proj') }}">Experience</a>
                                             {{-- <ul class="sub-menu">
                                                 <li><a class="nav_color" href="portfolio.html">Portfolio</a></li>
@@ -72,33 +74,33 @@
                                                 src="{{ asset('frontDesign/img/icons/arabic_icon00.png') }}"
                                                 alt="Arabic_Icon" width="36"></a>
                                     </div>
-                                    <div class="log_links">
+                                    {{-- <div class="log_links"> --}}
 
-                                        {{-- @if (Route::has('login')) --}}
-                                        <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block log_flex">
-                                            {{-- @auth --}}
+                                    {{-- @if (Route::has('login')) --}}
+                                    {{-- <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block log_flex"> --}}
+                                    {{-- @auth --}}
 
-                                            {{-- @if (!Auth::user()->hasRole('user')) --}}
-                                            {{-- <a class="headers_link" href="{{ url('/dashboard') }}"
+                                    {{-- @if (!Auth::user()->hasRole('user')) --}}
+                                    {{-- <a class="headers_link" href="{{ url('/dashboard') }}"
                                                             class="text-sm text-gray-700 dark:text-gray-500 underline">{{ __('app.Dashboard') }}</a> --}}
-                                            {{-- @endif --}}
-                                            {{-- <form action="{{ route('logout') }}" method="post">
+                                    {{-- @endif --}}
+                                    {{-- <form action="{{ route('logout') }}" method="post">
                                                         @csrf
                                                         <button class="logout_btn">{{ __('app.LOG OUT') }}</button>
                                                     </form> --}}
-                                            {{-- @else --}}
-                                            <a class="headers_link headers_left" href="{{ route('login') }}"
+                                    {{-- @else --}}
+                                    {{-- <a class="headers_link headers_left" href="{{ route('login') }}"
                                                 class="text-sm text-gray-700 dark:text-gray-500 underline">Log
-                                                In</a>
+                                                In</a> --}}
 
-                                            {{-- @if (Route::has('register')) --}}
-                                            <a class="headers_link" href="{{ route('register') }}"
-                                                class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-                                            {{-- @endif
+                                    {{-- @if (Route::has('register')) --}}
+                                    {{-- <a class="headers_link" href="{{ route('register') }}"
+                                                class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a> --}}
+                                    {{-- @endif
                                                 @endauth --}}
-                                        </div>
-                                        {{-- @endif --}}
-                                    </div>
+                                    {{-- </div> --}}
+                                    {{-- @endif --}}
+                                    {{-- </div> --}}
                                 </div>
                             </nav>
                         </div>

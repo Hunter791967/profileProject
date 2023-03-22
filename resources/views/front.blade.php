@@ -3,14 +3,14 @@
 @section('content')
     <!-- main-area -->
     <main>
-
+        <section class="main_circle"></section>
         <!-- banner-area -->
         <section class="banner">
             <div class="container custom-container">
                 <div class="row first_section">
                     <div class="col-lg-6 order-0 order-lg-2 first_sectionWest">
                         <div class="banner__img text-center text-xxl-end">
-                            <img src="{{ asset('frontDesign/img/images/colors.png') }}" class="colors" alt="Colors">
+                            {{-- <img src="{{ asset('frontDesign/img/images/colors.png') }}" class="colors" alt="Colors"> --}}
                             <img src="{{ asset('uploads/homeSlider/' . $showData->panner) }}" class="men"
                                 alt="My Profile Photo">
                         </div>
@@ -58,7 +58,7 @@
                     <div class="col-lg-6 main_icons interior_icons">
                         <div class="about__content">
                             <div class="section__title">
-                                <span class="sub-title">01 - Info About</span>
+                                <span class="sub-title">Info About</span>
                                 <h2 class="title">{{ $aboutData->title }}</h2>
                             </div>
                             <div class="about__exp">
@@ -86,7 +86,7 @@
                     <div class="row align-items-center justify-content-between">
                         <div class="col-xl-7 col-lg-6 col-md-8">
                             <div class="section__title">
-                                <span class="sub-title">02 - my Services</span>
+                                <span class="sub-title">My Services</span>
                                 <h2 class="title">{{ $mainService->main_title }}</h2>
                             </div>
                         </div>
@@ -133,8 +133,8 @@
                 <div class="row justify-content-center">
                     <div class="col-xl-6 col-lg-8">
                         <div class="section__title text-center">
-                            <span class="sub-title">03 - My Project Management Methodologies</span>
-                            <h2 class="title">I Use Agile & SAP Activation Methodologies</h2>
+                            <span class="sub-title">My Project Management Methodologies</span>
+                            <h2 class="title">I Use Agile & SAP Activate Methodologies</h2>
                         </div>
                     </div>
                 </div>
@@ -271,7 +271,7 @@
                 <div class="row justify-content-center">
                     <div class="col-xl-9 col-lg-8">
                         <div class="section__title text-center">
-                            <span class="sub-title">04 - Experience</span>
+                            <span class="sub-title">My Experience</span>
                             <h2 class="title">Samples Of My Successful Previous Projects</h2>
                         </div>
                     </div>
@@ -526,7 +526,7 @@
         <!-- blog-area-end -->
 
         <!-- contact-area -->
-        <section class="homeContact">
+        <section class="homeContactOne">
             <div class="container">
                 <div class="homeContact__wrap">
                     @include('sweetalert::alert')
@@ -605,6 +605,17 @@
                 }
             });
         }
+
+        // This Function for changing the stars from empty background to dark yellow background
+        // let activate = document.querySelectorAll(".men_nav");
+        // // console.log(activate);
+        // activate.forEach((event) => {
+        //     event.addEventListener("click", function() {
+        //         this.removeClass("active");
+        //         this.classList.toggle("active");
+        //         // $(this).addClass("active");
+        //     });
+        // });
     </script>
 
 @endsection
